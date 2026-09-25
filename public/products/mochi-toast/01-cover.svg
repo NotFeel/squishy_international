@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" role="img" class="product-art"><defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF8E8"/><stop offset="1" stop-color="#FFFFFF"/></linearGradient>
+      <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    </defs>
+    <rect width="640" height="640" rx="44" fill="url(#bg)"/>
+    <circle cx="92" cy="103" r="118" fill="#D99C5B" opacity=".13" filter="url(#blur)"/>
+    <circle cx="559" cy="518" r="135" fill="#FFD46A" opacity=".17" filter="url(#blur)"/>
+    <path d="M44 496 Q141 430 234 469" stroke="#FFFFFF" stroke-width="15" stroke-linecap="round" opacity=".65"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(100 190) scale(0.85)" fill="#D99C5B" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(528 145) scale(0.7)" fill="#FFD46A" opacity=".85"/>
+    
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <path d="M226 191 Q226 114 320 114 Q414 114 414 191 L419 436 Q419 486 369 486 H271 Q221 486 221 436Z" fill="#D99C5B" stroke="#D19254" stroke-width="7"/>
+      <path d="M250 184 Q250 143 320 143 Q390 143 390 184 L394 425 Q394 458 361 458 H279 Q246 458 246 425Z" fill="#F8E7BD"/>
+      <path d="M273 260 Q310 236 346 252 Q380 269 370 307 Q354 337 316 326 Q278 316 273 260Z" fill="#FFD46A" stroke="#E1B33E" stroke-width="5"/>
+      
+  <g transform="translate(320 360) scale(0.9)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="484" rx="107" ry="20" fill="#D99C5B" opacity=".3"/>
+    </g>
+    <rect x="24" y="24" width="592" height="592" rx="34" stroke="#FFFFFF" stroke-opacity=".66"/></svg>

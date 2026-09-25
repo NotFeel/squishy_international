@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" fill="none" role="img" class=""><rect width="640" height="640" rx="44" fill="#FBFBF8"/>
+    <path d="M37 319 H603" stroke="#20252A" stroke-width="2" stroke-dasharray="8 10" opacity=".45"/>
+    <path d="M320 34 V606" stroke="#FF8D83" stroke-width="2" stroke-dasharray="8 10" opacity=".5"/>
+    <path d="M76 105 H565 M76 96 V114 M565 96 V114" stroke="#20252A" stroke-width="3"/>
+    <path d="M72 534 H568 M72 525 V543 M568 525 V543" stroke="#20252A" stroke-width="3" opacity=".5"/>
+    <circle cx="56" cy="56" r="84" fill="#F5ECE6"/>
+    <circle cx="584" cy="584" r="105" fill="#20252A" opacity=".12"/>
+    
+    <g transform="translate(320 270) scale(1.26) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <ellipse cx="220" cy="176" rx="48" ry="50" fill="#20252A"/>
+      <ellipse cx="420" cy="176" rx="48" ry="50" fill="#20252A"/>
+      <ellipse cx="320" cy="313" rx="158" ry="146" fill="#FFFDF8" stroke="#E9E3DE" stroke-width="5"/>
+      <ellipse cx="225" cy="250" rx="45" ry="58" fill="#20252A" transform="rotate(25 225 250)"/>
+      <ellipse cx="415" cy="250" rx="45" ry="58" fill="#20252A" transform="rotate(-25 415 250)"/>
+      <ellipse cx="232" cy="257" rx="15" ry="19" fill="#FFFDF8"/>
+      <ellipse cx="408" cy="257" rx="15" ry="19" fill="#FFFDF8"/>
+      <ellipse cx="320" cy="333" rx="23" ry="16" fill="#FF8D83"/>
+      
+  <g transform="translate(320 310) scale(1.07)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="421" rx="105" ry="25" fill="#20252A" opacity=".34"/>
+    </g>
+    <path d="M91 82 Q104 117 139 130 Q104 143 91 178 Q78 143 43 130 Q78 117 91 82Z" fill="#FF8D83" opacity=".82"/>
+    <circle cx="538" cy="100" r="22" fill="#20252A" opacity=".28"/></svg>

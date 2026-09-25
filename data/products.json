@@ -1,0 +1,434 @@
+[
+  {
+    "id": "SQ001",
+    "slug": "panda-squishy",
+    "name": "Panda Squishy Toy",
+    "shortDescription": "A soft, slow-rising panda made for desk-side calm and sweet gifting.",
+    "category": "animal-squishy",
+    "tags": [
+      "panda",
+      "slow-rising",
+      "stress-relief"
+    ],
+    "material": "PU Foam",
+    "size": "10 x 8 x 8 cm",
+    "weight": "65 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": false,
+    "images": [
+      "/products/panda-squishy/01-cover.webp",
+      "/products/panda-squishy/02-detail.webp",
+      "/products/panda-squishy/03-lifestyle.webp",
+      "/products/panda-squishy/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Panda Squishy Toy | Slow Rising Squishy",
+      "description": "Cute slow-rising panda squishy toy for gifting, stress relief and wholesale."
+    },
+    "artType": "panda",
+    "palette": [
+      "#F5ECE6",
+      "#20252A",
+      "#FF8D83"
+    ]
+  },
+  {
+    "id": "SQ002",
+    "slug": "milk-cat",
+    "name": "Milk Cat Squishy",
+    "shortDescription": "A creamy little cat with a gentle, satisfying slow rise.",
+    "category": "animal-squishy",
+    "tags": [
+      "cat",
+      "slow-rising",
+      "gift"
+    ],
+    "material": "Soft TPR",
+    "size": "9 x 7 x 6 cm",
+    "weight": "72 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": true,
+    "images": [
+      "/products/milk-cat/01-cover.webp",
+      "/products/milk-cat/02-detail.webp",
+      "/products/milk-cat/03-lifestyle.webp",
+      "/products/milk-cat/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Milk Cat Squishy | Soft Slow Rising Toy",
+      "description": "A soft milk cat squishy toy for gifts, retail and stress relief. Wholesale and custom packaging available."
+    },
+    "artType": "cat",
+    "palette": [
+      "#FFF9F0",
+      "#F5C57C",
+      "#FF8D83"
+    ]
+  },
+  {
+    "id": "SQ003",
+    "slug": "sunny-bear",
+    "name": "Sunny Bear Squishy",
+    "shortDescription": "A warm honey bear that is soft in the hand and cheerful on a shelf.",
+    "category": "animal-squishy",
+    "tags": [
+      "bear",
+      "soft",
+      "gift"
+    ],
+    "material": "PU Foam",
+    "size": "11 x 9 x 7 cm",
+    "weight": "78 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": false,
+    "images": [
+      "/products/sunny-bear/01-cover.webp",
+      "/products/sunny-bear/02-detail.webp",
+      "/products/sunny-bear/03-lifestyle.webp",
+      "/products/sunny-bear/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Sunny Bear Squishy | Cute Soft Toy",
+      "description": "A cheerful honey bear squishy toy for gifting, retail and promotional collections."
+    },
+    "artType": "bear",
+    "palette": [
+      "#FFF5DE",
+      "#D7904E",
+      "#FFB55E"
+    ]
+  },
+  {
+    "id": "SQ004",
+    "slug": "strawberry-squishy",
+    "name": "Strawberry Squishy",
+    "shortDescription": "A plump berry with a soft matte finish and delightfully slow recovery.",
+    "category": "food-dessert",
+    "tags": [
+      "strawberry",
+      "food",
+      "slow-rising"
+    ],
+    "material": "PU Foam",
+    "size": "8 x 7 x 7 cm",
+    "weight": "60 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": true,
+    "images": [
+      "/products/strawberry-squishy/01-cover.webp",
+      "/products/strawberry-squishy/02-detail.webp",
+      "/products/strawberry-squishy/03-lifestyle.webp",
+      "/products/strawberry-squishy/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Strawberry Squishy Toy | Cute Food Squishy",
+      "description": "A cute slow-rising strawberry squishy for gift shops, retail displays and custom collections."
+    },
+    "artType": "strawberry",
+    "palette": [
+      "#F4F8EE",
+      "#F05258",
+      "#6CB678"
+    ]
+  },
+  {
+    "id": "SQ005",
+    "slug": "mochi-toast",
+    "name": "Mochi Toast Squishy",
+    "shortDescription": "A squishy toast friend with a smiling face and butter-soft feel.",
+    "category": "food-dessert",
+    "tags": [
+      "toast",
+      "food",
+      "cute"
+    ],
+    "material": "Soft TPR",
+    "size": "9 x 9 x 4 cm",
+    "weight": "68 g",
+    "moq": "150 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": false,
+    "images": [
+      "/products/mochi-toast/01-cover.webp",
+      "/products/mochi-toast/02-detail.webp",
+      "/products/mochi-toast/03-lifestyle.webp",
+      "/products/mochi-toast/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Mochi Toast Squishy | Cute Food Toy",
+      "description": "Soft mochi toast squishy toy for novelty retail, gifting and wholesale assortments."
+    },
+    "artType": "toast",
+    "palette": [
+      "#FFF8E8",
+      "#D99C5B",
+      "#FFD46A"
+    ]
+  },
+  {
+    "id": "SQ006",
+    "slug": "croissant-buddy",
+    "name": "Croissant Buddy Squishy",
+    "shortDescription": "A pastry-inspired desk companion with a light, springy squeeze.",
+    "category": "food-dessert",
+    "tags": [
+      "croissant",
+      "food",
+      "stress-relief"
+    ],
+    "material": "PU Foam",
+    "size": "12 x 8 x 5 cm",
+    "weight": "70 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": true,
+    "images": [
+      "/products/croissant-buddy/01-cover.webp",
+      "/products/croissant-buddy/02-detail.webp",
+      "/products/croissant-buddy/03-lifestyle.webp",
+      "/products/croissant-buddy/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Croissant Squishy Toy | Soft Food Squishy",
+      "description": "A cute croissant squishy for gifting, novelty retail and stress relief assortments."
+    },
+    "artType": "croissant",
+    "palette": [
+      "#FFF9EC",
+      "#E8A84D",
+      "#F7D58B"
+    ]
+  },
+  {
+    "id": "SQ007",
+    "slug": "mushroom-friend",
+    "name": "Mushroom Friend Squishy",
+    "shortDescription": "A tiny woodland character with a rounded cap and marshmallow feel.",
+    "category": "cute-characters",
+    "tags": [
+      "mushroom",
+      "character",
+      "gift"
+    ],
+    "material": "Soft TPR",
+    "size": "9 x 8 x 8 cm",
+    "weight": "73 g",
+    "moq": "150 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": false,
+    "images": [
+      "/products/mushroom-friend/01-cover.webp",
+      "/products/mushroom-friend/02-detail.webp",
+      "/products/mushroom-friend/03-lifestyle.webp",
+      "/products/mushroom-friend/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Mushroom Squishy Toy | Cute Character",
+      "description": "Cute mushroom character squishy toy for retail, gifts and custom branded collections."
+    },
+    "artType": "mushroom",
+    "palette": [
+      "#F4F6E9",
+      "#E95F58",
+      "#FFF0CF"
+    ]
+  },
+  {
+    "id": "SQ008",
+    "slug": "dreamy-cloud",
+    "name": "Dreamy Cloud Squishy",
+    "shortDescription": "A pillowy blue cloud designed to make stressful moments softer.",
+    "category": "cute-characters",
+    "tags": [
+      "cloud",
+      "character",
+      "stress-relief"
+    ],
+    "material": "PU Foam",
+    "size": "13 x 8 x 6 cm",
+    "weight": "74 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": false,
+    "images": [
+      "/products/dreamy-cloud/01-cover.webp",
+      "/products/dreamy-cloud/02-detail.webp",
+      "/products/dreamy-cloud/03-lifestyle.webp",
+      "/products/dreamy-cloud/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Cloud Squishy Toy | Soft Stress Relief",
+      "description": "A dreamy cloud squishy toy for stress relief, gifts and wholesale novelty collections."
+    },
+    "artType": "cloud",
+    "palette": [
+      "#EDF6FB",
+      "#8FC9E8",
+      "#FFF2A8"
+    ]
+  },
+  {
+    "id": "SQ009",
+    "slug": "mellow-cube",
+    "name": "Mellow Cube Squishy",
+    "shortDescription": "A minimalist stress cube with a clean shape and ultra-soft rebound.",
+    "category": "stress-relief",
+    "tags": [
+      "cube",
+      "desk-toy",
+      "stress-relief"
+    ],
+    "material": "PU Foam",
+    "size": "7 x 7 x 7 cm",
+    "weight": "58 g",
+    "moq": "200 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": false,
+    "images": [
+      "/products/mellow-cube/01-cover.webp",
+      "/products/mellow-cube/02-detail.webp",
+      "/products/mellow-cube/03-lifestyle.webp",
+      "/products/mellow-cube/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Mellow Cube Squishy | Desk Stress Toy",
+      "description": "A minimalist soft cube squishy for desk stress relief, gifting and promotional orders."
+    },
+    "artType": "cube",
+    "palette": [
+      "#F2F0EA",
+      "#A7C7B5",
+      "#FF8D83"
+    ]
+  },
+  {
+    "id": "SQ010",
+    "slug": "squishy-sprout",
+    "name": "Squishy Sprout",
+    "shortDescription": "A squeezable sprout that brings a little green calm to any desk.",
+    "category": "stress-relief",
+    "tags": [
+      "sprout",
+      "desk-toy",
+      "slow-rising"
+    ],
+    "material": "Soft TPR",
+    "size": "11 x 7 x 6 cm",
+    "weight": "69 g",
+    "moq": "150 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": false,
+    "images": [
+      "/products/squishy-sprout/01-cover.webp",
+      "/products/squishy-sprout/02-detail.webp",
+      "/products/squishy-sprout/03-lifestyle.webp",
+      "/products/squishy-sprout/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Sprout Squishy | Cute Desk Stress Toy",
+      "description": "A cute sprout squishy toy for desk stress relief, gift shops and wholesale assortments."
+    },
+    "artType": "sprout",
+    "palette": [
+      "#F3F7EC",
+      "#78B87A",
+      "#D8E89A"
+    ]
+  },
+  {
+    "id": "SQ011",
+    "slug": "custom-mascot",
+    "name": "Custom Mascot Squishy",
+    "shortDescription": "A sample-led custom character program for brands, events and retail campaigns.",
+    "category": "custom-oem",
+    "tags": [
+      "custom",
+      "oem",
+      "mascot"
+    ],
+    "material": "Custom PU Foam / TPR",
+    "size": "Made to brief",
+    "weight": "Project dependent",
+    "moq": "500 pcs",
+    "packaging": "Custom Packaging Available",
+    "oem": true,
+    "featured": true,
+    "newArrival": false,
+    "images": [
+      "/products/custom-mascot/01-cover.webp",
+      "/products/custom-mascot/02-detail.webp",
+      "/products/custom-mascot/03-lifestyle.webp",
+      "/products/custom-mascot/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Custom Mascot Squishy | OEM & ODM",
+      "description": "Custom mascot squishy development for brands, retail programs, promotions and private label."
+    },
+    "artType": "mascot",
+    "palette": [
+      "#FFF3F1",
+      "#FF8279",
+      "#E9C6AE"
+    ]
+  },
+  {
+    "id": "SQ012",
+    "slug": "mini-squishy-bundle",
+    "name": "Mini Squishy Bundle",
+    "shortDescription": "A colorful mix of small squishies for gifting, party bags and trial assortments.",
+    "category": "custom-oem",
+    "tags": [
+      "bundle",
+      "mini",
+      "assortment"
+    ],
+    "material": "Mixed PU Foam / TPR",
+    "size": "5-7 cm each",
+    "weight": "150 g / set",
+    "moq": "300 sets",
+    "packaging": "Display Box / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": true,
+    "images": [
+      "/products/mini-squishy-bundle/01-cover.webp",
+      "/products/mini-squishy-bundle/02-detail.webp",
+      "/products/mini-squishy-bundle/03-lifestyle.webp",
+      "/products/mini-squishy-bundle/04-packaging.webp"
+    ],
+    "seo": {
+      "title": "Mini Squishy Bundle | Wholesale Assortment",
+      "description": "Colorful mini squishy bundle for party gifts, retail assortments and custom wholesale programs."
+    },
+    "artType": "bundle",
+    "palette": [
+      "#F4F7F0",
+      "#FF9C8E",
+      "#7FC8B6"
+    ]
+  }
+]
