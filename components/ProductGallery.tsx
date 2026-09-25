@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { withBasePath } from "@/lib/site";
 
 const labels = ["Cover", "Details", "Lifestyle", "Packaging"];
 
@@ -18,7 +19,7 @@ export function ProductGallery({
     <div className="product-gallery">
       <div className="product-gallery__main">
         <Image
-          src={images[active]}
+          src={withBasePath(images[active])}
           alt={`${productName}, ${labels[active]?.toLowerCase() || "product view"}`}
           width={640}
           height={640}
@@ -38,7 +39,7 @@ export function ProductGallery({
             onClick={() => setActive(index)}
           >
             <Image
-              src={image}
+              src={withBasePath(image)}
               alt=""
               width={120}
               height={120}

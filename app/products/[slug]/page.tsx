@@ -13,7 +13,7 @@ import {
   getRelatedProducts,
   products,
 } from "@/lib/products";
-import { site } from "@/lib/site";
+import { absoluteAssetUrl, site } from "@/lib/site";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
@@ -90,7 +90,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     name: product.name,
     description: product.shortDescription,
     sku: product.id,
-    image: product.images.map((image) => `${site.url}${image}`),
+    image: product.images.map(absoluteAssetUrl),
     material: product.material,
     brand: {
       "@type": "Brand",

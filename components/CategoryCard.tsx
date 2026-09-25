@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { withBasePath } from "@/lib/site";
 import type { Product } from "@/lib/types";
 
 interface CategoryCardProps {
@@ -24,7 +25,7 @@ export function CategoryCard({
     <Link className={`category-card category-card--${accent}`} href={href}>
       <div className="category-card__image">
         <Image
-          src={image}
+          src={withBasePath(image)}
           alt={`${name} collection`}
           width={640}
           height={640}

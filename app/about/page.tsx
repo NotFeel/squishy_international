@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icon";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
-import { site } from "@/lib/site";
+import { site, withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -58,7 +58,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="container about-intro">
           <Image
-            src="/brand/lifestyle.svg"
+            src={withBasePath("/brand/lifestyle.svg")}
             alt="A thoughtful display of soft squishy toy products"
             width={1200}
             height={760}
@@ -124,7 +124,7 @@ export default function AboutPage() {
           </div>
           <div className="trust-visual">
             <Image
-              src="/brand/about.svg"
+              src={withBasePath("/brand/about.svg")}
               alt="Organized shelves representing product and packaging coordination"
               width={1000}
               height={720}

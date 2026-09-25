@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
 import { categories, products } from "@/lib/products";
+import { withBasePath } from "@/lib/site";
 
 const homeFaqs = [
   {
@@ -98,7 +99,7 @@ export default function HomePage() {
           </div>
           <div className="hero__visual">
             <Image
-              src="/brand/hero.svg"
+              src={withBasePath("/brand/hero.svg")}
               alt="A cheerful collection of panda, strawberry, mushroom and cloud squishy toys"
               width={1100}
               height={860}
@@ -186,7 +187,7 @@ export default function HomePage() {
           <div className="why-panel">
             <div className="why-panel__main">
               <Image
-                src="/products/mushroom-friend/03-lifestyle.svg"
+                src={withBasePath("/products/mushroom-friend/03-lifestyle.svg")}
                 alt="Mushroom squishy styled on a shelf"
                 width={800}
                 height={640}
@@ -262,7 +263,7 @@ export default function HomePage() {
           <div className="business-split">
             <article className="business-panel">
               <Image
-                src="/brand/wholesale.svg"
+                src={withBasePath("/brand/wholesale.svg")}
                 alt="Packed squishy toy cartons ready for wholesale"
                 width={1000}
                 height={720}
@@ -280,7 +281,7 @@ export default function HomePage() {
             </article>
             <article className="business-panel">
               <Image
-                src="/brand/oem.svg"
+                src={withBasePath("/brand/oem.svg")}
                 alt="Custom squishy toy concept becoming a physical sample"
                 width={1000}
                 height={720}
@@ -327,7 +328,7 @@ export default function HomePage() {
           </div>
           <div className="lifestyle__visual">
             <Image
-              src="/brand/lifestyle.svg"
+              src={withBasePath("/brand/lifestyle.svg")}
               alt="Soft squishy toys displayed on a bright contemporary shelf"
               width={1200}
               height={760}
@@ -341,7 +342,7 @@ export default function HomePage() {
         <div className="container trust-grid">
           <div className="trust-visual">
             <Image
-              src="/brand/about.svg"
+              src={withBasePath("/brand/about.svg")}
               alt="Organized warehouse shelves for toy products"
               width={1000}
               height={720}

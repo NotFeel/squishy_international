@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { withBasePath } from "@/lib/site";
 import type { Product } from "@/lib/types";
 
 export function ProductCard({
@@ -18,7 +19,7 @@ export function ProductCard({
         aria-label={`View ${product.name}`}
       >
         <Image
-          src={product.images[0]}
+          src={withBasePath(product.images[0])}
           alt={`${product.name}, soft slow-rising squishy toy`}
           width={640}
           height={640}

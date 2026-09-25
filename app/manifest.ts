@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { site, withBasePath } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -7,13 +7,13 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: site.name,
     description:
       "Soft, slow-rising squishy toys for gifting, retail and custom projects.",
-    start_url: "/",
+    start_url: withBasePath("/"),
     display: "standalone",
     background_color: "#FAFAF7",
     theme_color: "#FF7A70",
     icons: [
       {
-        src: "/brand/favicon.svg",
+        src: withBasePath("/brand/favicon.svg"),
         sizes: "any",
         type: "image/svg+xml",
       },

@@ -3,7 +3,7 @@ import { Analytics } from "@/components/Analytics";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { site } from "@/lib/site";
+import { site, withBasePath } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "OEM squishy",
   ],
   icons: {
-    icon: "/brand/favicon.svg",
+    icon: withBasePath("/brand/favicon.svg"),
   },
   openGraph: {
     type: "website",

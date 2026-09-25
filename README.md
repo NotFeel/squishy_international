@@ -48,7 +48,8 @@ cp .env.example .env.local
 | 变量 | 用途 |
 |---|---|
 | `NEXT_PUBLIC_BRAND_NAME` | 网站显示品牌名，用于 Logo、SEO、页脚和 WhatsApp 消息 |
-| `NEXT_PUBLIC_SITE_URL` | 正式域名，用于 canonical、sitemap、结构化数据和 WhatsApp 商品 URL |
+| `NEXT_PUBLIC_SITE_URL` | 正式站点 URL，用于 canonical、sitemap、结构化数据和 WhatsApp 商品 URL |
+| `NEXT_PUBLIC_BASE_PATH` | GitHub Pages 项目站点的子路径，例如 `/squishy_international`；自定义域名使用空值 |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | 国际格式 WhatsApp 号码，不含 `+` 和空格 |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | 联系邮箱 |
 | `NEXT_PUBLIC_GA_ID` | GA4 Measurement ID，未设置时不加载分析脚本 |
@@ -107,7 +108,7 @@ npm run generate:art
 
 1. 推送到 GitHub 的 `main` 分支。
 2. 在仓库 `Settings -> Pages -> Build and deployment` 中选择 `GitHub Actions`。
-3. 在 `Settings -> Secrets and variables -> Actions -> Variables` 配置 `.env.example` 中的五个变量。
+3. 项目站点默认会自动使用 `https://<用户>.github.io/<仓库名>/` 和对应 `basePath`；如使用自定义域名，再配置 `NEXT_PUBLIC_SITE_URL`。
 4. 重新运行 `Deploy Next.js to GitHub Pages` 工作流。
 
 生产环境建议绑定自定义域名并开启 HTTPS。`next.config.ts` 已启用：

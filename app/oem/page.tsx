@@ -5,6 +5,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { Icon, type IconName } from "@/components/Icon";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Custom Squishy Toys | OEM & ODM",
@@ -84,7 +85,7 @@ export default function OemPage() {
         <div className="container trust-grid">
           <div className="trust-visual">
             <Image
-              src="/brand/oem.svg"
+              src={withBasePath("/brand/oem.svg")}
               alt="A squishy toy concept shown as a sketch and finished 3D product"
               width={1000}
               height={720}
