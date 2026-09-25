@@ -23,13 +23,6 @@ export function buildWhatsAppMessage(
       `Product ID: ${product.id}`,
       `Product URL: ${productUrl}`,
       "",
-      "Could you please provide:",
-      "1. Wholesale price",
-      "2. MOQ",
-      "3. Sample information",
-      "4. Customization options",
-      "5. Shipping information",
-      "",
       "Thank you.",
     ].join("\n");
   }
