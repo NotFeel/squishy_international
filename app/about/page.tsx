@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/Icon";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { site, withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <aside className="page-hero__aside">
             <strong>Working on something?</strong>
             <p>Tell us about your market, product idea or wholesale requirement.</p>
-            <WhatsAppLink context="contact">Talk to Our Team</WhatsAppLink>
+            <WhatsAppButton context="contact">Talk to Our Team</WhatsAppButton>
           </aside>
         </div>
       </section>
@@ -162,7 +162,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="contact">Talk to Our Team</WhatsAppLink>
+              <WhatsAppButton className="button--large" context="contact">Talk to Our Team</WhatsAppButton>
               <Link className="button button--secondary button--large" href="/products/">Explore products</Link>
             </div>
           </div>

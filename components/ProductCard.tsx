@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { withBasePath } from "@/lib/site";
-import type { Product } from "@/lib/types";
+import type { Product } from "@/types/product";
 
 export function ProductCard({
   product,

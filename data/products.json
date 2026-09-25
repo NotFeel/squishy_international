@@ -4,6 +4,7 @@
     "slug": "panda-squishy",
     "name": "Panda Squishy Toy",
     "shortDescription": "A soft, slow-rising panda made for desk-side calm and sweet gifting.",
+    "description": "Cute slow-rising panda squishy toy for gifting, stress relief and wholesale.",
     "category": "animal-squishy",
     "tags": [
       "panda",
@@ -24,6 +25,7 @@
       "/products/panda-squishy/03-lifestyle.webp",
       "/products/panda-squishy/04-packaging.webp"
     ],
+    "ogImage": "/products/panda-squishy/og-image.jpg",
     "seo": {
       "title": "Panda Squishy Toy | Slow Rising Squishy",
       "description": "Cute slow-rising panda squishy toy for gifting, stress relief and wholesale."
@@ -40,6 +42,7 @@
     "slug": "milk-cat",
     "name": "Milk Cat Squishy",
     "shortDescription": "A creamy little cat with a gentle, satisfying slow rise.",
+    "description": "A soft milk cat squishy toy for gifts, retail and stress relief. Wholesale and custom packaging available.",
     "category": "animal-squishy",
     "tags": [
       "cat",
@@ -60,6 +63,7 @@
       "/products/milk-cat/03-lifestyle.webp",
       "/products/milk-cat/04-packaging.webp"
     ],
+    "ogImage": "/products/milk-cat/og-image.jpg",
     "seo": {
       "title": "Milk Cat Squishy | Soft Slow Rising Toy",
       "description": "A soft milk cat squishy toy for gifts, retail and stress relief. Wholesale and custom packaging available."
@@ -76,6 +80,7 @@
     "slug": "sunny-bear",
     "name": "Sunny Bear Squishy",
     "shortDescription": "A warm honey bear that is soft in the hand and cheerful on a shelf.",
+    "description": "A cheerful honey bear squishy toy for gifting, retail and promotional collections.",
     "category": "animal-squishy",
     "tags": [
       "bear",
@@ -96,6 +101,7 @@
       "/products/sunny-bear/03-lifestyle.webp",
       "/products/sunny-bear/04-packaging.webp"
     ],
+    "ogImage": "/products/sunny-bear/og-image.jpg",
     "seo": {
       "title": "Sunny Bear Squishy | Cute Soft Toy",
       "description": "A cheerful honey bear squishy toy for gifting, retail and promotional collections."
@@ -112,6 +118,7 @@
     "slug": "strawberry-squishy",
     "name": "Strawberry Squishy",
     "shortDescription": "A plump berry with a soft matte finish and delightfully slow recovery.",
+    "description": "A cute slow-rising strawberry squishy for gift shops, retail displays and custom collections.",
     "category": "food-dessert",
     "tags": [
       "strawberry",
@@ -132,6 +139,7 @@
       "/products/strawberry-squishy/03-lifestyle.webp",
       "/products/strawberry-squishy/04-packaging.webp"
     ],
+    "ogImage": "/products/strawberry-squishy/og-image.jpg",
     "seo": {
       "title": "Strawberry Squishy Toy | Cute Food Squishy",
       "description": "A cute slow-rising strawberry squishy for gift shops, retail displays and custom collections."
@@ -148,6 +156,7 @@
     "slug": "mochi-toast",
     "name": "Mochi Toast Squishy",
     "shortDescription": "A squishy toast friend with a smiling face and butter-soft feel.",
+    "description": "Soft mochi toast squishy toy for novelty retail, gifting and wholesale assortments.",
     "category": "food-dessert",
     "tags": [
       "toast",
@@ -168,6 +177,7 @@
       "/products/mochi-toast/03-lifestyle.webp",
       "/products/mochi-toast/04-packaging.webp"
     ],
+    "ogImage": "/products/mochi-toast/og-image.jpg",
     "seo": {
       "title": "Mochi Toast Squishy | Cute Food Toy",
       "description": "Soft mochi toast squishy toy for novelty retail, gifting and wholesale assortments."
@@ -184,6 +194,7 @@
     "slug": "croissant-buddy",
     "name": "Croissant Buddy Squishy",
     "shortDescription": "A pastry-inspired desk companion with a light, springy squeeze.",
+    "description": "A cute croissant squishy for gifting, novelty retail and stress relief assortments.",
     "category": "food-dessert",
     "tags": [
       "croissant",
@@ -204,6 +215,7 @@
       "/products/croissant-buddy/03-lifestyle.webp",
       "/products/croissant-buddy/04-packaging.webp"
     ],
+    "ogImage": "/products/croissant-buddy/og-image.jpg",
     "seo": {
       "title": "Croissant Squishy Toy | Soft Food Squishy",
       "description": "A cute croissant squishy for gifting, novelty retail and stress relief assortments."
@@ -220,6 +232,7 @@
     "slug": "mushroom-friend",
     "name": "Mushroom Friend Squishy",
     "shortDescription": "A tiny woodland character with a rounded cap and marshmallow feel.",
+    "description": "Cute mushroom character squishy toy for retail, gifts and custom branded collections.",
     "category": "cute-characters",
     "tags": [
       "mushroom",
@@ -240,6 +253,7 @@
       "/products/mushroom-friend/03-lifestyle.webp",
       "/products/mushroom-friend/04-packaging.webp"
     ],
+    "ogImage": "/products/mushroom-friend/og-image.jpg",
     "seo": {
       "title": "Mushroom Squishy Toy | Cute Character",
       "description": "Cute mushroom character squishy toy for retail, gifts and custom branded collections."
@@ -256,6 +270,7 @@
     "slug": "dreamy-cloud",
     "name": "Dreamy Cloud Squishy",
     "shortDescription": "A pillowy blue cloud designed to make stressful moments softer.",
+    "description": "A dreamy cloud squishy toy for stress relief, gifts and wholesale novelty collections.",
     "category": "cute-characters",
     "tags": [
       "cloud",
@@ -276,6 +291,7 @@
       "/products/dreamy-cloud/03-lifestyle.webp",
       "/products/dreamy-cloud/04-packaging.webp"
     ],
+    "ogImage": "/products/dreamy-cloud/og-image.jpg",
     "seo": {
       "title": "Cloud Squishy Toy | Soft Stress Relief",
       "description": "A dreamy cloud squishy toy for stress relief, gifts and wholesale novelty collections."
@@ -292,6 +308,7 @@
     "slug": "mellow-cube",
     "name": "Mellow Cube Squishy",
     "shortDescription": "A minimalist stress cube with a clean shape and ultra-soft rebound.",
+    "description": "A minimalist soft cube squishy for desk stress relief, gifting and promotional orders.",
     "category": "stress-relief",
     "tags": [
       "cube",
@@ -312,6 +329,7 @@
       "/products/mellow-cube/03-lifestyle.webp",
       "/products/mellow-cube/04-packaging.webp"
     ],
+    "ogImage": "/products/mellow-cube/og-image.jpg",
     "seo": {
       "title": "Mellow Cube Squishy | Desk Stress Toy",
       "description": "A minimalist soft cube squishy for desk stress relief, gifting and promotional orders."
@@ -328,6 +346,7 @@
     "slug": "squishy-sprout",
     "name": "Squishy Sprout",
     "shortDescription": "A squeezable sprout that brings a little green calm to any desk.",
+    "description": "A cute sprout squishy toy for desk stress relief, gift shops and wholesale assortments.",
     "category": "stress-relief",
     "tags": [
       "sprout",
@@ -348,6 +367,7 @@
       "/products/squishy-sprout/03-lifestyle.webp",
       "/products/squishy-sprout/04-packaging.webp"
     ],
+    "ogImage": "/products/squishy-sprout/og-image.jpg",
     "seo": {
       "title": "Sprout Squishy | Cute Desk Stress Toy",
       "description": "A cute sprout squishy toy for desk stress relief, gift shops and wholesale assortments."
@@ -364,6 +384,7 @@
     "slug": "custom-mascot",
     "name": "Custom Mascot Squishy",
     "shortDescription": "A sample-led custom character program for brands, events and retail campaigns.",
+    "description": "Custom mascot squishy development for brands, retail programs, promotions and private label.",
     "category": "custom-oem",
     "tags": [
       "custom",
@@ -384,6 +405,7 @@
       "/products/custom-mascot/03-lifestyle.webp",
       "/products/custom-mascot/04-packaging.webp"
     ],
+    "ogImage": "/products/custom-mascot/og-image.jpg",
     "seo": {
       "title": "Custom Mascot Squishy | OEM & ODM",
       "description": "Custom mascot squishy development for brands, retail programs, promotions and private label."
@@ -400,6 +422,7 @@
     "slug": "mini-squishy-bundle",
     "name": "Mini Squishy Bundle",
     "shortDescription": "A colorful mix of small squishies for gifting, party bags and trial assortments.",
+    "description": "Colorful mini squishy bundle for party gifts, retail assortments and custom wholesale programs.",
     "category": "custom-oem",
     "tags": [
       "bundle",
@@ -420,6 +443,7 @@
       "/products/mini-squishy-bundle/03-lifestyle.webp",
       "/products/mini-squishy-bundle/04-packaging.webp"
     ],
+    "ogImage": "/products/mini-squishy-bundle/og-image.jpg",
     "seo": {
       "title": "Mini Squishy Bundle | Wholesale Assortment",
       "description": "Colorful mini squishy bundle for party gifts, retail assortments and custom wholesale programs."

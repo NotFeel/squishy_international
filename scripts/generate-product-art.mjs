@@ -229,6 +229,76 @@ function packaging(product) {
   );
 }
 
+function escapeXml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
+
+function wrapWords(value, maxLength, maxLines = 2) {
+  const words = value.split(/\s+/);
+  const lines = [];
+  let current = "";
+
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word;
+    if (candidate.length <= maxLength || !current) {
+      current = candidate;
+      continue;
+    }
+
+    lines.push(current);
+    current = word;
+    if (lines.length === maxLines - 1) break;
+  }
+
+  if (current && lines.length < maxLines) lines.push(current);
+  return lines;
+}
+
+function ogCard(product) {
+  const [bg, main, accent] = product.palette;
+  const brandName = process.env.NEXT_PUBLIC_BRAND_NAME || "Squishy Loom";
+  const titleLines = wrapWords(product.name, 24, 2);
+  const descriptionLines = wrapWords(product.shortDescription, 53, 3);
+  const titleMarkup = titleLines
+    .map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 64}">${escapeXml(line)}</tspan>`)
+    .join("");
+  const descriptionMarkup = descriptionLines
+    .map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 28}">${escapeXml(line)}</tspan>`)
+    .join("");
+
+  return svgOpen(
+    1200,
+    630,
+    `<defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="${bg}"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="${accent}" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="${main}" opacity=".13"/>
+    <path d="M72 96 H164" stroke="${main}" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">${escapeXml(brandName.toUpperCase())}</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">${titleMarkup}</text>
+    <text x="72" y="${titleLines.length > 1 ? 376 : 314}" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23">${descriptionMarkup}</text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="${main}"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      ${shape(product.artType, product.palette, "cover")}
+    </g>
+    ${sparkle(1042, 186, main, 1.05)}
+    ${sparkle(938, 520, accent, .72)}`,
+  );
+}
+
 for (const product of products) {
   const dir = path.join(root, "public", "products", product.slug);
   fs.mkdirSync(dir, { recursive: true });
@@ -245,6 +315,12 @@ for (const product of products) {
       .webp({ quality: 88, effort: 5 })
       .toFile(path.join(dir, `${name}.webp`));
   }
+
+  const socialCard = ogCard(product);
+  fs.writeFileSync(path.join(dir, "og-image.svg"), socialCard);
+  await sharp(Buffer.from(socialCard))
+    .jpeg({ quality: 88, chromaSubsampling: "4:4:4" })
+    .toFile(path.join(dir, "og-image.jpg"));
 }
 
 const hero = svgOpen(
@@ -399,4 +475,4 @@ await sharp(Buffer.from(hero))
   .png({ compressionLevel: 9 })
   .toFile(path.join(root, "public", "brand", "og-image.png"));
 
-console.log(`Generated art for ${products.length} products, ${Object.keys(brandFiles).length} brand assets and 1 social image.`);
+console.log(`Generated art for ${products.length} products, ${Object.keys(brandFiles).length} brand assets and ${products.length + 1} social images.`);

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { mainNavigation } from "@/lib/site";
 
 export function Header() {
@@ -45,9 +45,9 @@ export function Header() {
           <Link className="header-faq" href="/faq/">
             FAQ
           </Link>
-          <WhatsAppLink className="button--compact desktop-whatsapp" context="contact">
+          <WhatsAppButton className="button--compact desktop-whatsapp" context="contact">
             Chat on WhatsApp
-          </WhatsAppLink>
+          </WhatsAppButton>
           <button
             className="menu-toggle"
             type="button"
@@ -79,9 +79,9 @@ export function Header() {
             FAQ
             <Icon name="arrow" size={20} />
           </Link>
-          <WhatsAppLink className="mobile-menu__cta" context="contact">
+          <WhatsAppButton className="mobile-menu__cta" context="contact">
             Chat on WhatsApp
-          </WhatsAppLink>
+          </WhatsAppButton>
           <p>Soft, slow-rising squishy toys for retail, gifting and custom projects.</p>
         </nav>
       </div>

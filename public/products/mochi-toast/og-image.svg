@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" class=""><defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#FFF8E8"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="#FFD46A" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="#D99C5B" opacity=".13"/>
+    <path d="M72 96 H164" stroke="#D99C5B" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SQUISHY FACTORY</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800"><tspan x="72" dy="0">Mochi Toast Squishy</tspan></text>
+    <text x="72" y="314" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23"><tspan x="72" dy="0">A squishy toast friend with a smiling face and</tspan><tspan x="72" dy="28">butter-soft feel.</tspan></text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="#D99C5B"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <path d="M226 191 Q226 114 320 114 Q414 114 414 191 L419 436 Q419 486 369 486 H271 Q221 486 221 436Z" fill="#D99C5B" stroke="#D19254" stroke-width="7"/>
+      <path d="M250 184 Q250 143 320 143 Q390 143 390 184 L394 425 Q394 458 361 458 H279 Q246 458 246 425Z" fill="#F8E7BD"/>
+      <path d="M273 260 Q310 236 346 252 Q380 269 370 307 Q354 337 316 326 Q278 316 273 260Z" fill="#FFD46A" stroke="#E1B33E" stroke-width="5"/>
+      
+  <g transform="translate(320 360) scale(0.9)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="484" rx="107" ry="20" fill="#D99C5B" opacity=".3"/>
+    </g>
+    </g>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(1042 186) scale(1.05)" fill="#D99C5B" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(938 520) scale(0.72)" fill="#FFD46A" opacity=".85"/></svg>

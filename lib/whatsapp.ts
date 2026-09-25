@@ -1,5 +1,5 @@
-import { site } from "@/lib/site";
-import type { Product } from "@/lib/types";
+import { absoluteUrl, site } from "@/lib/site";
+import type { Product } from "@/types/product";
 
 export type InquiryContext =
   | "general"
@@ -9,50 +9,84 @@ export type InquiryContext =
   | "sample"
   | "contact";
 
-function buildMessage(product?: Product, context: InquiryContext = "general") {
+export function buildWhatsAppMessage(
+  product?: Product,
+  context: InquiryContext = "general",
+): string {
   if (product) {
-    const productUrl = `${site.url}/products/${product.slug}/`;
-    return `Hi ${site.name},
+    const productUrl = absoluteUrl(`/products/${product.slug}/`);
 
-I'm interested in this product.
-
-Product: ${product.name}
-Product ID: ${product.id}
-Product URL: ${productUrl}
-
-Could you please send me:
-1. Wholesale price
-2. MOQ
-3. Sample information
-4. Customization options
-5. Shipping information
-
-Thank you.`;
+    return [
+      `Hi ${site.name}, I'm interested in this product.`,
+      "",
+      `Product: ${product.name}`,
+      `Product ID: ${product.id}`,
+      `Product URL: ${productUrl}`,
+      "",
+      "Could you please provide:",
+      "1. Wholesale price",
+      "2. MOQ",
+      "3. Sample information",
+      "4. Customization options",
+      "5. Shipping information",
+      "",
+      "Thank you.",
+    ].join("\n");
   }
 
   const messages: Record<InquiryContext, string> = {
-    general:
-      `Hi ${site.name}, I'd like to learn more about your squishy toy collection.`,
-    product:
-      `Hi ${site.name}, I'm interested in your squishy products and would like more information.`,
-    wholesale:
-      `Hi ${site.name}, I'm interested in wholesale squishy toys. Please send me product, MOQ, packaging and shipping information.`,
-    oem: `Hi ${site.name}, I'd like to discuss a custom squishy project. Here is a little about my idea:`,
-    sample:
-      `Hi ${site.name}, I'd like to ask about sample availability and sample details for your squishy products.`,
-    contact:
-      `Hi ${site.name}, I'd like to talk with your team about a squishy product inquiry.`,
+    general: [
+      `Hi ${site.name}, I'm interested in your squishy products.`,
+      "",
+      "Please send me your product catalog and wholesale information.",
+      "",
+      "Thank you.",
+    ].join("\n"),
+    product: [
+      `Hi ${site.name}, I'm interested in your squishy products.`,
+      "",
+      "Please send me the catalog and current wholesale information.",
+      "",
+      "Thank you.",
+    ].join("\n"),
+    wholesale: [
+      `Hi ${site.name}, I'm interested in wholesale squishy toys.`,
+      "",
+      "Please send me product, MOQ, packaging and shipping information.",
+      "",
+      "Thank you.",
+    ].join("\n"),
+    oem: [
+      `Hi ${site.name}, I'd like to discuss a custom squishy project.`,
+      "",
+      "Here is a little about my idea:",
+    ].join("\n"),
+    sample: [
+      `Hi ${site.name}, I'd like to ask about sample availability.`,
+      "",
+      "Please send me sample details and the next steps.",
+      "",
+      "Thank you.",
+    ].join("\n"),
+    contact: [
+      `Hi ${site.name}, I'd like to talk with your team.`,
+      "",
+      "I have a squishy product inquiry.",
+      "",
+      "Thank you.",
+    ].join("\n"),
   };
 
   return messages[context];
 }
 
-export function getWhatsAppUrl(
+export function buildWhatsAppUrl(
   product?: Product,
   context: InquiryContext = "general",
-) {
-  const phone = site.whatsappNumber.replace(/\D/g, "");
-  return `https://wa.me/${phone}?text=${encodeURIComponent(
-    buildMessage(product, context),
-  )}`;
+): string {
+  const message = encodeURIComponent(buildWhatsAppMessage(product, context));
+  return `https://wa.me/${site.whatsappPhone}?text=${message}`;
 }
+
+// Backward-compatible alias for existing callers.
+export const getWhatsAppUrl = buildWhatsAppUrl;

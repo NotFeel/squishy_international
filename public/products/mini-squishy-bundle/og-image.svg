@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" class=""><defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#F4F7F0"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="#7FC8B6" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="#FF9C8E" opacity=".13"/>
+    <path d="M72 96 H164" stroke="#FF9C8E" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SQUISHY FACTORY</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800"><tspan x="72" dy="0">Mini Squishy Bundle</tspan></text>
+    <text x="72" y="314" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23"><tspan x="72" dy="0">A colorful mix of small squishies for gifting, party</tspan><tspan x="72" dy="28">bags and trial assortments.</tspan></text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="#FF9C8E"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <circle cx="211" cy="327" r="95" fill="#FFD2A8"/>
+      <circle cx="429" cy="327" r="95" fill="#FF9C8E"/>
+      <circle cx="320" cy="241" r="108" fill="#7FC8B6"/>
+      <circle cx="211" cy="333" r="62" fill="#FFF7E8" opacity=".22"/>
+      <circle cx="429" cy="333" r="62" fill="#FFF7E8" opacity=".22"/>
+      <circle cx="320" cy="247" r="65" fill="#FFF7E8" opacity=".22"/>
+      
+  <g transform="translate(211 340) scale(0.48)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      
+  <g transform="translate(429 340) scale(0.48)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      
+  <g transform="translate(320 257) scale(0.55)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="431" rx="175" ry="28" fill="#7FC8B6" opacity=".3"/>
+    </g>
+    </g>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(1042 186) scale(1.05)" fill="#FF9C8E" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(938 520) scale(0.72)" fill="#7FC8B6" opacity=".85"/></svg>

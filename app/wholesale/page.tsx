@@ -5,8 +5,8 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { Icon, type IconName } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
-import { products } from "@/lib/products";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { getAllProducts } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Wholesale Squishy Toys",
@@ -75,6 +75,7 @@ const faqs = [
 ];
 
 export default function WholesalePage() {
+  const products = getAllProducts();
   const wholesaleProducts = products.filter((product) => product.featured || product.newArrival).slice(0, 4);
 
   return (
@@ -95,7 +96,7 @@ export default function WholesalePage() {
           <aside className="page-hero__aside">
             <strong>Planning an order?</strong>
             <p>Send your product interests, quantity and destination for a focused reply.</p>
-            <WhatsAppLink context="wholesale">Request Wholesale Information</WhatsAppLink>
+            <WhatsAppButton context="wholesale">Request Wholesale Information</WhatsAppButton>
           </aside>
         </div>
       </section>
@@ -165,9 +166,9 @@ export default function WholesalePage() {
                 Every product and customization request is confirmed against
                 current production requirements.
               </p>
-              <WhatsAppLink className="button--whatsapp" context="wholesale">
+              <WhatsAppButton className="button--whatsapp" context="wholesale">
                 Confirm your MOQ
-              </WhatsAppLink>
+              </WhatsAppButton>
             </div>
             <div className="moq-panel__stats">
               <div className="moq-stat"><strong>100+</strong><span>Typical catalog product MOQ</span></div>
@@ -202,7 +203,7 @@ export default function WholesalePage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="wholesale">Request Wholesale Information</WhatsAppLink>
+              <WhatsAppButton className="button--large" context="wholesale">Request Wholesale Information</WhatsAppButton>
               <Link className="button button--secondary button--large" href="/contact/">Contact our team</Link>
             </div>
           </div>

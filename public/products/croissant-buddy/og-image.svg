@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" class=""><defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#FFF9EC"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="#F7D58B" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="#E8A84D" opacity=".13"/>
+    <path d="M72 96 H164" stroke="#E8A84D" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SQUISHY FACTORY</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800"><tspan x="72" dy="0">Croissant Buddy Squishy</tspan></text>
+    <text x="72" y="314" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23"><tspan x="72" dy="0">A pastry-inspired desk companion with a light,</tspan><tspan x="72" dy="28">springy squeeze.</tspan></text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="#E8A84D"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <path d="M175 345 Q182 232 276 178 Q310 160 320 196 Q330 160 364 178 Q458 232 465 345 Q460 408 405 429 Q360 446 320 402 Q280 446 235 429 Q180 408 175 345Z" fill="#E8A84D" stroke="#D18F37" stroke-width="7"/>
+      <path d="M217 324 Q242 244 287 221" stroke="#F7D58B" stroke-width="22" stroke-linecap="round"/>
+      <path d="M423 324 Q398 244 353 221" stroke="#F7D58B" stroke-width="22" stroke-linecap="round"/>
+      <path d="M248 378 Q282 333 320 399 Q358 333 392 378" stroke="#F6D69C" stroke-width="16" stroke-linecap="round"/>
+      
+  <g transform="translate(320 263) scale(0.82)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="432" rx="105" ry="22" fill="#E8A84D" opacity=".28"/>
+    </g>
+    </g>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(1042 186) scale(1.05)" fill="#E8A84D" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(938 520) scale(0.72)" fill="#F7D58B" opacity=".85"/></svg>

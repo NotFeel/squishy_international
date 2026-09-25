@@ -7,11 +7,13 @@
 - 首页：Hero、分类、精选商品、品牌价值、Wholesale / OEM CTA、生活方式、信任信息、FAQ 和最终询盘
 - 产品目录：分类、New Arrivals 筛选与排序
 - 商品详情：4 视图图库、规格、定制能力、关联商品和商品级 WhatsApp 预填消息
+- 产品分享：每个商品独立生成 1200 × 630 JPG Open Graph 图片
 - 业务页面：Wholesale、OEM / ODM、About、FAQ、Contact、Privacy、Terms
 - 全站：响应式导航、移动固定 WhatsApp CTA、GA4 `click_whatsapp` 事件
 - SEO：独立商品 URL、Metadata、Open Graph、Product JSON-LD、Sitemap、Robots、Manifest
 - 部署：GitHub Pages GitHub Actions 工作流
 - 商品数据与 UI 分离：`data/products.json`
+- 类型与组件结构：`types/product.ts`、`components/WhatsAppButton.tsx`
 - 本地图片资产：48 张 WebP 商品视图和品牌 SVG/PNG 资产
 
 ## 本地运行
@@ -48,9 +50,9 @@ cp .env.example .env.local
 | 变量 | 用途 |
 |---|---|
 | `NEXT_PUBLIC_BRAND_NAME` | 网站显示品牌名，用于 Logo、SEO、页脚和 WhatsApp 消息 |
-| `NEXT_PUBLIC_SITE_URL` | 正式站点 URL，用于 canonical、sitemap、结构化数据和 WhatsApp 商品 URL |
+| `NEXT_PUBLIC_SITE_URL` | 站点 Origin，例如 `https://yourname.github.io`；不要附加仓库路径 |
 | `NEXT_PUBLIC_BASE_PATH` | GitHub Pages 项目站点的子路径，例如 `/squishy_international`；自定义域名使用空值 |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | 国际格式 WhatsApp 号码，不含 `+` 和空格 |
+| `NEXT_PUBLIC_WHATSAPP_PHONE` | 国际格式 WhatsApp 号码，不含 `+` 和空格 |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | 联系邮箱 |
 | `NEXT_PUBLIC_GA_ID` | GA4 Measurement ID，未设置时不加载分析脚本 |
 
@@ -60,9 +62,10 @@ cp .env.example .env.local
 
 1. 将真实商品图优化为 WebP，推荐 1600-2400 px 长边和 150-500 KB。
 2. 按 `public/products/[slug]/01-cover.webp` 等命名替换演示图。
-3. 在 `data/products.json` 中更新商品字段、SEO 和图片路径。
-4. 执行 `npm run build` 验证。
-5. 提交并推送到 `main`，GitHub Actions 自动部署。
+3. 每个产品准备一张 1200 × 630 的 `og-image.jpg`，用于 WhatsApp / Facebook / LinkedIn 链接预览。
+4. 在 `data/products.json` 中更新 `description`、`ogImage`、SEO 和图片路径。
+5. 执行 `npm run build` 验证。
+6. 提交并推送到 `main`，GitHub Actions 自动部署。
 
 商品字段说明：
 
@@ -72,6 +75,7 @@ cp .env.example .env.local
   "slug": "panda-squishy",
   "name": "Panda Squishy Toy",
   "shortDescription": "Cute slow-rising panda squishy.",
+  "description": "A soft slow-rising panda squishy for gifting and stress relief.",
   "category": "animal-squishy",
   "tags": ["panda", "slow-rising"],
   "material": "PU Foam",
@@ -83,6 +87,7 @@ cp .env.example .env.local
   "featured": true,
   "newArrival": false,
   "images": ["/products/panda-squishy/01-cover.webp"],
+  "ogImage": "/products/panda-squishy/og-image.jpg",
   "seo": {
     "title": "Panda Squishy Toy | Slow Rising Squishy",
     "description": "Cute slow-rising panda squishy toy."
@@ -108,7 +113,7 @@ npm run generate:art
 
 1. 推送到 GitHub 的 `main` 分支。
 2. 在仓库 `Settings -> Pages -> Build and deployment` 中选择 `GitHub Actions`。
-3. 项目站点默认会自动使用 `https://<用户>.github.io/<仓库名>/` 和对应 `basePath`；如使用自定义域名，再配置 `NEXT_PUBLIC_SITE_URL`。
+3. 项目站点会默认生成 `NEXT_PUBLIC_SITE_URL=https://<用户>.github.io` 和 `NEXT_PUBLIC_BASE_PATH=/<仓库名>`；如使用自定义域名，再配置这两个变量。
 4. 重新运行 `Deploy Next.js to GitHub Pages` 工作流。
 
 生产环境建议绑定自定义域名并开启 HTTPS。`next.config.ts` 已启用：
@@ -120,7 +125,28 @@ trailingSlash: true;
 
 这会在 `npm run build` 后生成 `out/`，适配静态托管和 `/products/[slug]/` URL。
 
+## Open Graph 与 WhatsApp 验证
+
+构建后检查：
+
+```bash
+npm run build
+sed -n '1,120p' out/products/panda-squishy/index.html
+```
+
+产品页必须包含：
+
+```html
+<meta property="og:title" content="Panda Squishy Toy | Slow Rising Squishy">
+<meta property="og:description" content="...">
+<meta property="og:image" content="https://your-domain.com/products/panda-squishy/og-image.jpg">
+<meta property="og:url" content="https://your-domain.com/products/panda-squishy/">
+```
+
+`og:image` 必须是可公开访问的 HTTPS 绝对 URL，尺寸为 1200 × 630。WhatsApp 不会直接加载 `ogImage` 字段，而是先读取产品 URL 返回的 HTML Metadata。
+
 ## 上线前检查
+
 
 - 替换所有演示品牌、联系人、号码和域名
 - 将演示商品图替换为真实、统一风格的商品摄影

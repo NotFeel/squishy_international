@@ -2,19 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { ProductFilters } from "@/components/ProductFilters";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
-import { products } from "@/lib/products";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { getAllProducts } from "@/lib/products";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Squishy Toys Collection",
   description:
     "Browse cute animal, food, character and stress-relief squishy toys. Wholesale and custom OEM options available.",
   alternates: {
-    canonical: "/products/",
+    canonical: absoluteUrl("/products/"),
   },
 };
 
 export default function ProductsPage() {
+  const products = getAllProducts();
   return (
     <>
       <section className="page-hero catalog-hero">
@@ -38,9 +40,9 @@ export default function ProductsPage() {
               Ask for a category assortment, wholesale pricing and packaging
               options.
             </p>
-            <WhatsAppLink context="wholesale">
+            <WhatsAppButton context="wholesale">
               Request wholesale details
-            </WhatsAppLink>
+            </WhatsAppButton>
           </aside>
         </div>
       </section>
@@ -63,9 +65,9 @@ export default function ProductsPage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="wholesale">
+              <WhatsAppButton className="button--large" context="wholesale">
                 Request Wholesale Information
-              </WhatsAppLink>
+              </WhatsAppButton>
               <Link className="button button--secondary button--large" href="/oem/">
                 Explore OEM / ODM <Icon name="arrow" size={18} />
               </Link>

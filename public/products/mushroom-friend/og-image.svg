@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" class=""><defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#F4F6E9"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="#FFF0CF" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="#E95F58" opacity=".13"/>
+    <path d="M72 96 H164" stroke="#E95F58" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SQUISHY FACTORY</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800"><tspan x="72" dy="0">Mushroom Friend Squishy</tspan></text>
+    <text x="72" y="314" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23"><tspan x="72" dy="0">A tiny woodland character with a rounded cap and</tspan><tspan x="72" dy="28">marshmallow feel.</tspan></text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="#E95F58"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <path d="M271 304 Q253 396 236 432 H404 Q387 396 369 304Z" fill="#FFF5DF" stroke="#E9DFC9" stroke-width="5"/>
+      <path d="M176 277 Q181 138 320 138 Q459 138 464 277 Q420 326 320 328 Q220 326 176 277Z" fill="#E95F58" stroke="#D94B4D" stroke-width="6"/>
+      <ellipse cx="257" cy="222" rx="26" ry="18" fill="#FFF2DC"/>
+      <ellipse cx="364" cy="198" rx="30" ry="21" fill="#FFF2DC"/>
+      <ellipse cx="397" cy="260" rx="22" ry="16" fill="#FFF2DC"/>
+      
+  <g transform="translate(320 350) scale(0.82)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <ellipse cx="320" cy="432" rx="103" ry="22" fill="#E95F58" opacity=".25"/>
+    </g>
+    </g>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(1042 186) scale(1.05)" fill="#E95F58" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(938 520) scale(0.72)" fill="#FFF0CF" opacity=".85"/></svg>

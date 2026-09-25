@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { site } from "@/lib/site";
 
 const footerLinks = {
@@ -31,9 +31,9 @@ export function Footer() {
         <div className="site-footer__brand">
           <Logo light />
           <p>Cute squishy toys for gifting, retail and custom projects.</p>
-          <WhatsAppLink className="footer-whatsapp" context="contact">
+          <WhatsAppButton className="footer-whatsapp" context="contact">
             Talk to our team
-          </WhatsAppLink>
+          </WhatsAppButton>
         </div>
         <div className="site-footer__links">
           {Object.entries(footerLinks).map(([title, links]) => (
@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="container site-footer__bottom">
         <div>
-          <span>WhatsApp: +{site.whatsappNumber}</span>
+          <span>WhatsApp: +{site.whatsappPhone}</span>
           <span>{site.email}</span>
           <span>{site.location}</span>
         </div>

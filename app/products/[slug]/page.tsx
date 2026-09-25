@@ -6,52 +6,62 @@ import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductGallery } from "@/components/ProductGallery";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
+  getAllProducts,
   getCategoryName,
-  getProduct,
+  getProductBySlug,
   getRelatedProducts,
-  products,
 } from "@/lib/products";
-import { absoluteAssetUrl, site } from "@/lib/site";
+import { absoluteUrl, site } from "@/lib/site";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
-  return products.map((product) => ({ slug: product.slug }));
+  return getAllProducts().map((product) => ({ slug: product.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = getProductBySlug(slug);
 
   if (!product) {
     return { title: "Product not found" };
   }
 
+  const productUrl = absoluteUrl(`/products/${product.slug}/`);
+  const ogImageUrl = absoluteUrl(product.ogImage);
+
   return {
     title: product.seo.title,
     description: product.seo.description,
     alternates: {
-      canonical: `/products/${product.slug}/`,
+      canonical: productUrl,
     },
     openGraph: {
       title: product.seo.title,
       description: product.seo.description,
-      url: `/products/${product.slug}/`,
+      url: productUrl,
+      siteName: site.name,
       type: "website",
       images: [
         {
-          url: product.images[0],
-          width: 640,
-          height: 640,
-          alt: `${product.name} product image`,
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: product.name,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.seo.title,
+      description: product.seo.description,
+      images: [ogImageUrl],
     },
   };
 }
@@ -76,21 +86,21 @@ const customOptions = [
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
   const related = getRelatedProducts(product);
-  const productUrl = `${site.url}/products/${product.slug}/`;
+  const productUrl = absoluteUrl(`/products/${product.slug}/`);
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    description: product.shortDescription,
+    description: product.description,
     sku: product.id,
-    image: product.images.map(absoluteAssetUrl),
+    image: [absoluteUrl(product.ogImage), ...product.images.map(absoluteUrl)],
     material: product.material,
     brand: {
       "@type": "Brand",
@@ -147,9 +157,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="product-summary__cta">
-                <WhatsAppLink product={product} context="product" className="button--large">
+                <WhatsAppButton product={product} context="product" className="button--large">
                   Ask About This Product
-                </WhatsAppLink>
+                </WhatsAppButton>
                 <p>
                   Your message will include the product name, SKU and page link.
                 </p>
@@ -252,13 +262,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink
+              <WhatsAppButton
                 product={product}
                 context="product"
                 className="button--large"
               >
                 Ask About This Product
-              </WhatsAppLink>
+              </WhatsAppButton>
               <Link className="button button--secondary button--large" href="/products/">
                 Back to products
               </Link>

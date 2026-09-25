@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import { categories } from "@/lib/products";
-import type { Product } from "@/lib/types";
+import type { Product } from "@/types/product";
 
 type Filter = "all" | "new-arrivals" | string;
 

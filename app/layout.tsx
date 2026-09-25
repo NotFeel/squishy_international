@@ -3,11 +3,11 @@ import { Analytics } from "@/components/Analytics";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { site, withBasePath } from "@/lib/site";
+import { absoluteUrl, site, withBasePath } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(`${site.url}/`),
   title: {
     default: `${site.name} | Cute Squishy Toys, Wholesale & OEM`,
     template: `%s | ${site.name}`,
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: site.name,
-    url: site.url,
+    url: absoluteUrl("/"),
     title: `${site.name} | Cute Squishy Toys Made to Make You Smile`,
     description:
       "Soft, slow-rising squishy toys for gifting, retail and custom projects.",
     images: [
       {
-        url: "/brand/og-image.png",
+        url: absoluteUrl("/brand/og-image.png"),
         width: 1200,
         height: 630,
         alt: "A colorful collection of soft squishy toys",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: `${site.name} | Cute Squishy Toys`,
     description:
       "Soft, slow-rising squishy toys for gifting, retail and custom projects.",
-    images: ["/brand/og-image.png"],
+    images: [absoluteUrl("/brand/og-image.png")],
   },
 };
 

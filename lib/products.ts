@@ -1,7 +1,9 @@
 import productData from "@/data/products.json";
-import type { Product, ProductCategory } from "@/lib/types";
+import type { Product, ProductCategory } from "@/types/product";
 
-export const products = productData as Product[];
+const allProducts = productData as Product[];
+
+export const products = allProducts;
 
 export const categories: {
   slug: ProductCategory;
@@ -47,8 +49,12 @@ export const categories: {
   },
 ];
 
-export function getProduct(slug: string) {
-  return products.find((product) => product.slug === slug);
+export function getAllProducts(): Product[] {
+  return allProducts;
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return allProducts.find((product) => product.slug === slug);
 }
 
 export function getCategoryName(slug: ProductCategory) {
@@ -58,7 +64,7 @@ export function getCategoryName(slug: ProductCategory) {
 }
 
 export function getRelatedProducts(product: Product, limit = 4) {
-  return products
+  return allProducts
     .filter(
       (candidate) =>
         candidate.slug !== product.slug &&

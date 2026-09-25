@@ -5,8 +5,8 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
-import { categories, products } from "@/lib/products";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { categories, getAllProducts } from "@/lib/products";
 import { withBasePath } from "@/lib/site";
 
 const homeFaqs = [
@@ -56,6 +56,7 @@ const trustCards = [
 ];
 
 export default function HomePage() {
+  const products = getAllProducts();
   const featuredProducts = products.filter((product) => product.featured);
   const categoryProducts = categories.map((category) => ({
     ...category,
@@ -81,9 +82,9 @@ export default function HomePage() {
                 Explore Products
                 <Icon name="arrow" size={19} />
               </Link>
-              <WhatsAppLink className="button--large" context="general">
+              <WhatsAppButton className="button--large" context="general">
                 Chat on WhatsApp
-              </WhatsAppLink>
+              </WhatsAppButton>
             </div>
             <div className="hero__proof" aria-label="Product benefits">
               <span>
@@ -398,9 +399,9 @@ export default function HomePage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="contact">
+              <WhatsAppButton className="button--large" context="contact">
                 Talk to Our Team
-              </WhatsAppLink>
+              </WhatsAppButton>
               <Link className="button button--secondary button--large" href="/contact/">
                 Contact details
               </Link>

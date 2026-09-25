@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -62,7 +62,7 @@ export default function FaqPage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="contact">Talk to Our Team</WhatsAppLink>
+              <WhatsAppButton className="button--large" context="contact">Talk to Our Team</WhatsAppButton>
               <Link className="button button--secondary button--large" href="/products/">Browse products</Link>
             </div>
           </div>

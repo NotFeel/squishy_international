@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -37,16 +37,16 @@ export default function ContactPage() {
               Product name, estimated quantity and destination country help us
               answer with the right wholesale or sample information.
             </p>
-            <WhatsAppLink className="button--large" context="contact">
+            <WhatsAppButton className="button--large" context="contact">
               Talk to Our Team
-            </WhatsAppLink>
+            </WhatsAppButton>
           </div>
           <div className="contact-details">
             <div className="contact-detail">
               <i><Icon name="whatsapp" size={22} /></i>
               <div>
                 <span>WhatsApp</span>
-                <strong>+{site.whatsappNumber}</strong>
+                <strong>+{site.whatsappPhone}</strong>
                 <small>Product, wholesale, sample and custom inquiries</small>
               </div>
             </div>

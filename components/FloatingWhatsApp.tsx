@@ -1,9 +1,9 @@
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export function FloatingWhatsApp() {
   return (
     <div className="floating-whatsapp">
-      <WhatsAppLink context="contact">Chat on WhatsApp</WhatsAppLink>
+      <WhatsAppButton context="contact">Chat on WhatsApp</WhatsAppButton>
     </div>
   );
 }

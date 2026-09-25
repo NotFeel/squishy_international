@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" class=""><defs>
+      <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#FFF9F0"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <filter id="ogShadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#4A3C36" flood-opacity=".16"/></filter>
+    </defs>
+    <rect width="1200" height="630" rx="36" fill="url(#ogBg)"/>
+    <circle cx="1082" cy="104" r="180" fill="#FF8D83" opacity=".25"/>
+    <circle cx="1100" cy="579" r="220" fill="#F5C57C" opacity=".13"/>
+    <path d="M72 96 H164" stroke="#F5C57C" stroke-width="7" stroke-linecap="round"/>
+    <text x="184" y="104" fill="#696D72" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SQUISHY FACTORY</text>
+    <text x="72" y="214" fill="#1F2328" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800"><tspan x="72" dy="0">Milk Cat Squishy</tspan></text>
+    <text x="72" y="314" fill="#686D73" font-family="Arial, Helvetica, sans-serif" font-size="23"><tspan x="72" dy="0">A creamy little cat with a gentle, satisfying slow</tspan><tspan x="72" dy="28">rise.</tspan></text>
+    <rect x="72" y="500" width="362" height="58" rx="29" fill="#F5C57C"/>
+    <text x="253" y="537" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">SOFT • SLOW-RISING • GIFTABLE</text>
+    <g filter="url(#ogShadow)" transform="translate(720 -20) scale(.86)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+    <g transform="translate(320 270) scale(1) translate(-320 -270)">
+      <ellipse cx="320" cy="440" rx="178" ry="39" fill="#20252A" opacity=".11"/>
+      
+      <path d="M202 208 L208 95 Q211 78 228 89 L289 128 Q320 114 351 128 L412 89 Q429 78 432 95 L438 208Z" fill="#FFFDF8" stroke="#E9E3DE" stroke-width="5"/>
+      <path d="M226 170 L229 116 L270 145Z" fill="#FF8D83" opacity=".7"/>
+      <path d="M414 170 L411 116 L370 145Z" fill="#FF8D83" opacity=".7"/>
+      <ellipse cx="320" cy="330" rx="160" ry="148" fill="#FFFDF8" stroke="#E9E3DE" stroke-width="5"/>
+      <path d="M184 242 Q224 214 265 240" stroke="#F5C57C" stroke-width="15" stroke-linecap="round" opacity=".55"/>
+      <path d="M456 242 Q416 214 375 240" stroke="#F5C57C" stroke-width="15" stroke-linecap="round" opacity=".55"/>
+      
+  <g transform="translate(320 314) scale(1.08)" fill="#20252A">
+    <ellipse cx="-26" cy="-6" rx="5" ry="7"/>
+    <ellipse cx="26" cy="-6" rx="5" ry="7"/>
+    <path d="M-13 12 Q0 22 13 12" stroke="#20252A" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <circle cx="-43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+    <circle cx="43" cy="15" r="9" fill="#ff9b93" opacity=".62"/>
+  </g>
+      <path d="M281 358 Q320 387 359 358 Q347 401 320 406 Q293 401 281 358Z" fill="#FF8D83" opacity=".35"/>
+      <ellipse cx="320" cy="423" rx="105" ry="24" fill="#F5C57C" opacity=".32"/>
+    </g>
+    </g>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(1042 186) scale(1.05)" fill="#F5C57C" opacity=".85"/>
+    
+  <path d="M0 -18 C3 -6 6 -3 18 0 C6 3 3 6 0 18 C-3 6 -6 3 -18 0 C-6 -3 -3 -6 0 -18Z" transform="translate(938 520) scale(0.72)" fill="#FF8D83" opacity=".85"/></svg>

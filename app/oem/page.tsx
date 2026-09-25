@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Icon, type IconName } from "@/components/Icon";
 import { SectionHeading } from "@/components/SectionHeading";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export default function OemPage() {
           <aside className="page-hero__aside">
             <strong>Have a concept?</strong>
             <p>Send a sketch, reference or written brief. A rough idea is enough to begin.</p>
-            <WhatsAppLink context="oem">Discuss Your Custom Project</WhatsAppLink>
+            <WhatsAppButton context="oem">Discuss Your Custom Project</WhatsAppButton>
           </aside>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function OemPage() {
               </p>
             </div>
             <div className="final-cta__actions">
-              <WhatsAppLink className="button--large" context="oem">Discuss Your Custom Project</WhatsAppLink>
+              <WhatsAppButton className="button--large" context="oem">Discuss Your Custom Project</WhatsAppButton>
               <Link className="button button--secondary button--large" href="/contact/">Ask a question</Link>
             </div>
           </div>

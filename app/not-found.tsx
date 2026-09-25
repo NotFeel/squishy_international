@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
-import { WhatsAppLink } from "@/components/WhatsAppLink";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function NotFound() {
   return (
@@ -17,9 +17,9 @@ export default function NotFound() {
             <Link className="button button--primary button--large" href="/products/">
               Browse products <Icon name="arrow" size={19} />
             </Link>
-            <WhatsAppLink className="button--large" context="contact">
+            <WhatsAppButton className="button--large" context="contact">
               Ask on WhatsApp
-            </WhatsAppLink>
+            </WhatsAppButton>
           </div>
         </div>
       </div>
