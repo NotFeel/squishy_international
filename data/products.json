@@ -5,7 +5,7 @@
     "name": "Panda Squishy Toy",
     "shortDescription": "A soft, slow-rising panda made for desk-side calm and sweet gifting.",
     "description": "Cute slow-rising panda squishy toy for gifting, stress relief and wholesale.",
-    "category": "animal-squishy",
+    "materialId": "pu-foam",
     "tags": [
       "panda",
       "slow-rising",
@@ -43,7 +43,7 @@
     "name": "Milk Cat Squishy",
     "shortDescription": "A creamy little cat with a gentle, satisfying slow rise.",
     "description": "A soft milk cat squishy toy for gifts, retail and stress relief. Wholesale and custom packaging available.",
-    "category": "animal-squishy",
+    "materialId": "tpr",
     "tags": [
       "cat",
       "slow-rising",
@@ -81,7 +81,7 @@
     "name": "Sunny Bear Squishy",
     "shortDescription": "A warm honey bear that is soft in the hand and cheerful on a shelf.",
     "description": "A cheerful honey bear squishy toy for gifting, retail and promotional collections.",
-    "category": "animal-squishy",
+    "materialId": "pu-foam",
     "tags": [
       "bear",
       "soft",
@@ -119,7 +119,7 @@
     "name": "Strawberry Squishy",
     "shortDescription": "A plump berry with a soft matte finish and delightfully slow recovery.",
     "description": "A cute slow-rising strawberry squishy for gift shops, retail displays and custom collections.",
-    "category": "food-dessert",
+    "materialId": "pu-foam",
     "tags": [
       "strawberry",
       "food",
@@ -157,7 +157,7 @@
     "name": "Mochi Toast Squishy",
     "shortDescription": "A squishy toast friend with a smiling face and butter-soft feel.",
     "description": "Soft mochi toast squishy toy for novelty retail, gifting and wholesale assortments.",
-    "category": "food-dessert",
+    "materialId": "tpr",
     "tags": [
       "toast",
       "food",
@@ -195,7 +195,7 @@
     "name": "Croissant Buddy Squishy",
     "shortDescription": "A pastry-inspired desk companion with a light, springy squeeze.",
     "description": "A cute croissant squishy for gifting, novelty retail and stress relief assortments.",
-    "category": "food-dessert",
+    "materialId": "pu-foam",
     "tags": [
       "croissant",
       "food",
@@ -233,7 +233,7 @@
     "name": "Mushroom Friend Squishy",
     "shortDescription": "A tiny woodland character with a rounded cap and marshmallow feel.",
     "description": "Cute mushroom character squishy toy for retail, gifts and custom branded collections.",
-    "category": "cute-characters",
+    "materialId": "tpr",
     "tags": [
       "mushroom",
       "character",
@@ -271,7 +271,7 @@
     "name": "Dreamy Cloud Squishy",
     "shortDescription": "A pillowy blue cloud designed to make stressful moments softer.",
     "description": "A dreamy cloud squishy toy for stress relief, gifts and wholesale novelty collections.",
-    "category": "cute-characters",
+    "materialId": "pu-foam",
     "tags": [
       "cloud",
       "character",
@@ -309,7 +309,7 @@
     "name": "Mellow Cube Squishy",
     "shortDescription": "A minimalist stress cube with a clean shape and ultra-soft rebound.",
     "description": "A minimalist soft cube squishy for desk stress relief, gifting and promotional orders.",
-    "category": "stress-relief",
+    "materialId": "pu-foam",
     "tags": [
       "cube",
       "desk-toy",
@@ -347,7 +347,7 @@
     "name": "Squishy Sprout",
     "shortDescription": "A squeezable sprout that brings a little green calm to any desk.",
     "description": "A cute sprout squishy toy for desk stress relief, gift shops and wholesale assortments.",
-    "category": "stress-relief",
+    "materialId": "tpr",
     "tags": [
       "sprout",
       "desk-toy",
@@ -385,7 +385,7 @@
     "name": "Custom Mascot Squishy",
     "shortDescription": "A sample-led custom character program for brands, events and retail campaigns.",
     "description": "Custom mascot squishy development for brands, retail programs, promotions and private label.",
-    "category": "custom-oem",
+    "materialId": "mixed",
     "tags": [
       "custom",
       "oem",
@@ -423,7 +423,7 @@
     "name": "Mini Squishy Bundle",
     "shortDescription": "A colorful mix of small squishies for gifting, party bags and trial assortments.",
     "description": "Colorful mini squishy bundle for party gifts, retail assortments and custom wholesale programs.",
-    "category": "custom-oem",
+    "materialId": "mixed",
     "tags": [
       "bundle",
       "mini",

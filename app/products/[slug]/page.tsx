@@ -9,10 +9,10 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import {
   getAllProducts,
-  getCategoryName,
   getProductBySlug,
   getRelatedProducts,
 } from "@/lib/products";
+import { getMaterialById } from "@/lib/materials";
 import { absoluteUrl, site } from "@/lib/site";
 
 interface ProductPageProps {
@@ -92,6 +92,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const material = getMaterialById(product.materialId);
   const related = getRelatedProducts(product);
   const productUrl = absoluteUrl(`/products/${product.slug}/`);
   const productSchema = {
@@ -132,13 +133,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span aria-hidden="true">/</span>
             <Link href="/products/">Products</Link>
             <span aria-hidden="true">/</span>
+            <Link href={`/products/material/${product.materialId}/`}>
+              {material?.name || "Material"}
+            </Link>
+            <span aria-hidden="true">/</span>
             <span aria-current="page">{product.name}</span>
           </nav>
           <div className="product-detail">
             <ProductGallery images={product.images} productName={product.name} />
             <div className="product-summary">
               <div className="product-summary__meta">
-                <span>{getCategoryName(product.category)}</span>
+                <span>{material?.name || product.material}</span>
                 <span>SKU {product.id}</span>
                 {product.newArrival && <span>New arrival</span>}
               </div>
@@ -188,6 +193,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div className="spec-item">
               <span>Material</span>
               <strong>{product.material}</strong>
+            </div>
+            <div className="spec-item">
+              <span>Material Family</span>
+              <strong>{material?.name || "Other"}</strong>
             </div>
             <div className="spec-item">
               <span>Size</span>

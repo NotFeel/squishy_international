@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllMaterials } from "@/lib/materials";
 import { getAllProducts } from "@/lib/products";
 import { absoluteUrl } from "@/lib/site";
 
@@ -22,6 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : route === "products/" ? 0.9 : 0.7,
   }));
 
+  const materialRoutes = getAllMaterials().map((material) => ({
+    url: absoluteUrl(`/products/material/${material.id}/`),
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }));
+
   const productRoutes = products.map((product) => ({
     url: absoluteUrl(`/products/${product.slug}/`),
     lastModified,
@@ -29,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...productRoutes];
+  return [...staticRoutes, ...materialRoutes, ...productRoutes];
 }
 
 export const dynamic = "force-static";

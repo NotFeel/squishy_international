@@ -19,7 +19,7 @@ const audiences: { icon: IconName; title: string; copy: string }[] = [
   { icon: "package", title: "Toy Stores", copy: "Impulse-friendly products for physical retail displays." },
   { icon: "heart", title: "Gift Shops", copy: "Cute, giftable themes that suit seasonal assortments." },
   { icon: "globe", title: "Online Sellers", copy: "Flexible product selections for marketplace and social commerce." },
-  { icon: "box", title: "Distributors", copy: "Category-based sourcing for repeat wholesale programs." },
+  { icon: "box", title: "Distributors", copy: "Material-based sourcing for repeat wholesale programs." },
   { icon: "spark", title: "Retail Brands", copy: "Collection planning with packaging and branding options." },
   { icon: "palette", title: "Promotional Companies", copy: "Logo and event-ready concepts for qualified custom projects." },
 ];
@@ -27,7 +27,7 @@ const audiences: { icon: IconName; title: string; copy: string }[] = [
 const benefits = [
   {
     title: "Build the right mix",
-    copy: "Choose across animals, food, characters and stress-relief themes to suit your audience and price point.",
+    copy: "Choose across PU Foam, TPR, mixed-material and future material collections to suit your audience and price point.",
   },
   {
     title: "Start with clear MOQs",
@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "What is the minimum order for wholesale?",
     answer:
-      "Most catalog products start at 100-200 pcs. Mixed-category orders may have different minimums. Share your preferred products and quantities for an exact answer.",
+      "Most catalog products start at 100-200 pcs. Mixed-material orders may have different minimums. Share your preferred products and quantities for an exact answer.",
   },
   {
     question: "Can I order a mixed assortment?",
@@ -143,7 +143,7 @@ export default function WholesalePage() {
         <div className="container">
           <div className="section-heading-row">
             <SectionHeading
-              eyebrow="Popular categories"
+              eyebrow="Popular materials"
               title="A starting point for your assortment"
               description="Mix familiar characters with seasonal or trend-led designs to keep the collection engaging."
             />

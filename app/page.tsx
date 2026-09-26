@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CategoryCard } from "@/components/CategoryCard";
+import { MaterialCard } from "@/components/MaterialCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { categories, getAllProducts } from "@/lib/products";
+import { getAllMaterials } from "@/lib/materials";
+import { getAllProducts } from "@/lib/products";
 import { withBasePath } from "@/lib/site";
 
 const homeFaqs = [
@@ -58,10 +59,15 @@ const trustCards = [
 export default function HomePage() {
   const products = getAllProducts();
   const featuredProducts = products.filter((product) => product.featured);
-  const categoryProducts = categories.map((category) => ({
-    ...category,
-    product:
-      products.find((product) => product.category === category.slug) || products[0],
+  const materialColors = ["blush", "butter", "sky", "sage", "peach"];
+  const materialCards = getAllMaterials().map((material, index) => ({
+    ...material,
+    description: `Browse ${material.name} products for retail, gifting and custom projects.`,
+    href: `/products/material/${material.id}/`,
+    image:
+      products.find((product) => product.materialId === material.id)?.images[0] ||
+      products[0].images[0],
+    color: materialColors[index % materialColors.length],
   }));
 
   return (
@@ -135,24 +141,24 @@ export default function HomePage() {
         <div className="container">
           <div className="section-heading-row">
             <SectionHeading
-              eyebrow="Find your favorite"
-              title="A little softness for every mood"
-              description="Browse cheerful collections made for gifting, personal collections and retail shelves."
+              eyebrow="Shop by material"
+              title="Find the right feel for your collection"
+              description="Browse every product collection by its material and production type."
             />
             <Link className="text-link" href="/products/">
               View all products <Icon name="arrow" size={18} />
             </Link>
           </div>
-          <div className="category-grid">
-            {categoryProducts.map((category, index) => (
-              <CategoryCard
-                name={category.name}
-                description={category.description}
-                href={`/products/?filter=${category.slug}`}
-                image={category.product.images[0]}
+          <div className="material-grid material-grid--materials">
+            {materialCards.map((material, index) => (
+              <MaterialCard
+                name={material.name}
+                description={material.description}
+                href={material.href}
+                image={material.image}
                 index={index}
-                accent={category.color}
-                key={category.slug}
+                accent={material.color}
+                key={material.id}
               />
             ))}
           </div>

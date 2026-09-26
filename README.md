@@ -4,16 +4,16 @@
 
 ## 已实现
 
-- 首页：Hero、分类、精选商品、品牌价值、Wholesale / OEM CTA、生活方式、信任信息、FAQ 和最终询盘
-- 产品目录：分类、New Arrivals 筛选与排序
+- 首页：Hero、材质分类、精选商品、品牌价值、Wholesale / OEM CTA、生活方式、信任信息、FAQ 和最终询盘
+- 产品目录：材质静态分类、名称搜索、10 / 20 / 50 分页和 URL 状态同步
 - 商品详情：4 视图图库、规格、定制能力、关联商品和商品级 WhatsApp 预填消息
 - 产品分享：每个商品独立生成 1200 × 630 JPG Open Graph 图片
 - 业务页面：Wholesale、OEM / ODM、About、FAQ、Contact、Privacy、Terms
 - 全站：响应式导航、移动固定 WhatsApp CTA、GA4 `click_whatsapp` 事件
 - SEO：独立商品 URL、Metadata、Open Graph、Product JSON-LD、Sitemap、Robots、Manifest
 - 部署：GitHub Pages GitHub Actions 工作流
-- 商品数据与 UI 分离：`data/products.json`
-- 类型与组件结构：`types/product.ts`、`components/WhatsAppButton.tsx`
+- 商品数据与 UI 分离：`data/products.json`、`config/materials.json`
+- 类型与组件结构：`types/product.ts`、`lib/materials.ts`、`components/MaterialNav.tsx`、`components/ProductCatalog.tsx`
 - 本地图片资产：48 张 WebP 商品视图和品牌 SVG/PNG 资产
 
 ## 本地运行
@@ -63,8 +63,8 @@ cp .env.example .env.local
 1. 将真实商品图优化为 WebP，推荐 1600-2400 px 长边和 150-500 KB。
 2. 按 `public/products/[slug]/01-cover.webp` 等命名替换演示图。
 3. 每个产品准备一张 1200 × 630 的 `og-image.jpg`，用于 WhatsApp / Facebook / LinkedIn 链接预览。
-4. 在 `data/products.json` 中更新 `description`、`ogImage`、SEO 和图片路径。
-5. 执行 `npm run build` 验证。
+4. 在 `data/products.json` 中更新 `materialId`、`description`、`ogImage`、SEO 和图片路径。
+5. 执行 `npm run validate` 和 `npm run build` 验证。
 6. 提交并推送到 `main`，GitHub Actions 自动部署。
 
 商品字段说明：
@@ -76,7 +76,7 @@ cp .env.example .env.local
   "name": "Panda Squishy Toy",
   "shortDescription": "Cute slow-rising panda squishy.",
   "description": "A soft slow-rising panda squishy for gifting and stress relief.",
-  "category": "animal-squishy",
+  "materialId": "pu-foam",
   "tags": ["panda", "slow-rising"],
   "material": "PU Foam",
   "size": "10 x 8 x 8 cm",
@@ -95,13 +95,27 @@ cp .env.example .env.local
 }
 ```
 
-允许的商品分类：
+材质分类全部维护在：
 
-- `animal-squishy`
-- `food-dessert`
-- `cute-characters`
-- `stress-relief`
-- `custom-oem`
+```text
+config/materials.json
+```
+
+当前启用的材质 ID：
+
+- `pu-foam`
+- `tpr`
+- `mixed`
+
+材质增加、停用和排序只需修改 `config/materials.json`。修改后执行构建，会自动生成对应的 `/products/material/[slug]/` 静态页面。
+
+产品数据校验会在 `npm run build` 前自动执行：
+
+```bash
+npm run validate
+```
+
+检查内容包括 `materialId` 是否存在、Slug 是否重复、图片和 OG 图片是否存在，以及必填字段是否为空。
 
 如需重新生成当前矢量演示图，执行：
 

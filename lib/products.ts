@@ -1,75 +1,35 @@
 import productData from "@/data/products.json";
-import type { Product, ProductCategory } from "@/types/product";
+import type { Product } from "@/types/product";
 
-const allProducts = productData as Product[];
-
-export const products = allProducts;
-
-export const categories: {
-  slug: ProductCategory;
-  name: string;
-  shortName: string;
-  description: string;
-  color: string;
-}[] = [
-  {
-    slug: "animal-squishy",
-    name: "Animal Squishy",
-    shortName: "Animals",
-    description: "Friendly faces and soft little companions.",
-    color: "blush",
-  },
-  {
-    slug: "food-dessert",
-    name: "Food & Dessert",
-    shortName: "Food",
-    description: "Sweet, snack-inspired squeezes.",
-    color: "butter",
-  },
-  {
-    slug: "cute-characters",
-    name: "Cute Characters",
-    shortName: "Characters",
-    description: "Playful personalities with big charm.",
-    color: "sky",
-  },
-  {
-    slug: "stress-relief",
-    name: "Stress Relief",
-    shortName: "Stress Relief",
-    description: "Simple shapes made for calmer moments.",
-    color: "sage",
-  },
-  {
-    slug: "custom-oem",
-    name: "Custom / OEM",
-    shortName: "Custom",
-    description: "Your idea, shape, colors and branding.",
-    color: "peach",
-  },
-];
+const productList = productData as Product[];
 
 export function getAllProducts(): Product[] {
-  return allProducts;
+  return productList;
 }
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return allProducts.find((product) => product.slug === slug);
+  return productList.find((product) => product.slug === slug);
 }
 
-export function getCategoryName(slug: ProductCategory) {
-  return (
-    categories.find((category) => category.slug === slug)?.name || "Squishy Toy"
-  );
+export function getProductsByMaterial(materialId: string): Product[] {
+  return productList.filter((product) => product.materialId === materialId);
 }
 
 export function getRelatedProducts(product: Product, limit = 4) {
-  return allProducts
-    .filter(
-      (candidate) =>
-        candidate.slug !== product.slug &&
-        (candidate.category === product.category ||
-          candidate.tags.some((tag) => product.tags.includes(tag))),
-    )
-    .slice(0, limit);
+  const sameMaterial = productList.filter(
+    (candidate) =>
+      candidate.slug !== product.slug &&
+      candidate.materialId === product.materialId,
+  );
+  const sharedTags = productList.filter(
+    (candidate) =>
+      candidate.slug !== product.slug &&
+      candidate.materialId !== product.materialId &&
+      candidate.tags.some((tag) => product.tags.includes(tag)),
+  );
+
+  return [...sameMaterial, ...sharedTags].slice(0, limit);
 }
+
+// Compatibility export for code that only needs to read the catalog.
+export const products = productList;

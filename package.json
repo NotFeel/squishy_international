@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run validate && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "generate:art": "node scripts/generate-product-art.mjs"
+    "generate:art": "node scripts/generate-product-art.mjs",
+    "validate": "node scripts/validate-products.mjs"
   },
   "dependencies": {
     "next": "^16.3.6",

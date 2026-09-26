@@ -695,13 +695,13 @@ h3 {
   }
 }
 
-.category-grid {
+.material-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 17px;
 }
 
-.category-card {
+.material-card {
   position: relative;
   display: flex;
   min-width: 0;
@@ -715,30 +715,30 @@ h3 {
     box-shadow 220ms ease;
 }
 
-.category-card:hover {
+.material-card:hover {
   box-shadow: var(--shadow-card);
   transform: translateY(-6px);
 }
 
-.category-card__image {
+.material-card__image {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--surface-soft);
 }
 
-.category-card__image img {
+.material-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 380ms ease;
 }
 
-.category-card:hover .category-card__image img {
+.material-card:hover .material-card__image img {
   transform: scale(1.04);
 }
 
-.category-card__image > span {
+.material-card__image > span {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -751,25 +751,25 @@ h3 {
   letter-spacing: 0.07em;
 }
 
-.category-card__copy {
+.material-card__copy {
   display: grid;
   flex: 1;
   padding: 19px 18px 18px;
 }
 
-.category-card__copy h3 {
+.material-card__copy h3 {
   margin-bottom: 7px;
   font-size: 1.05rem;
 }
 
-.category-card__copy p {
+.material-card__copy p {
   margin-bottom: 18px;
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.5;
 }
 
-.category-card__copy > span {
+.material-card__copy > span {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -779,11 +779,11 @@ h3 {
   font-weight: 800;
 }
 
-.category-card__copy > span svg {
+.material-card__copy > span svg {
   transition: transform 180ms ease;
 }
 
-.category-card:hover .category-card__copy > span svg {
+.material-card:hover .material-card__copy > span svg {
   transform: translateX(3px);
 }
 
@@ -2327,7 +2327,7 @@ h3 {
     gap: 13px;
   }
 
-  .category-grid {
+  .material-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -2571,24 +2571,24 @@ h3 {
     height: 34px;
   }
 
-  .category-grid {
+  .material-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .category-card {
+  .material-card {
     border-radius: 18px;
   }
 
-  .category-card__copy {
+  .material-card__copy {
     padding: 14px;
   }
 
-  .category-card__copy h3 {
+  .material-card__copy h3 {
     font-size: 0.94rem;
   }
 
-  .category-card__copy p {
+  .material-card__copy p {
     margin-bottom: 12px;
     font-size: 0.69rem;
   }
@@ -2893,5 +2893,211 @@ h3 {
 @media (max-width: 760px) {
   .site-footer {
     padding-bottom: 102px;
+  }
+}
+
+.material-grid--materials {
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+}
+
+.material-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.material-nav a {
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.material-nav a:hover {
+  border-color: #c9c8c3;
+  color: var(--ink);
+}
+
+.material-nav a.is-active {
+  border-color: var(--ink);
+  color: white;
+  background: var(--ink);
+}
+
+.catalog-section {
+  padding-top: 78px;
+}
+
+.catalog-controls {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.catalog-search {
+  display: grid;
+  width: min(100%, 520px);
+  gap: 7px;
+}
+
+.catalog-search > span,
+.page-size-select > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.catalog-search input,
+.page-size-select select {
+  min-height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.catalog-search input {
+  width: 100%;
+  padding: 11px 15px;
+}
+
+.catalog-search input::placeholder {
+  color: var(--muted-light);
+}
+
+.page-size-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 1px;
+}
+
+.page-size-select select {
+  min-height: 42px;
+  padding: 8px 34px 8px 13px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 44px;
+}
+
+.pagination > button,
+.pagination__numbers button {
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.pagination > button:hover:not(:disabled),
+.pagination__numbers button:hover {
+  border-color: var(--ink);
+}
+
+.pagination > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.pagination__numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pagination__numbers button {
+  min-width: 42px;
+  padding-inline: 10px;
+}
+
+.pagination__numbers button.is-active {
+  border-color: var(--ink);
+  color: white;
+  background: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .material-grid--materials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .material-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .material-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .material-nav a {
+    flex: 0 0 auto;
+  }
+
+  .catalog-section {
+    padding-top: 64px;
+  }
+
+  .catalog-controls {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .catalog-search {
+    width: 100%;
+  }
+
+  .page-size-select {
+    align-self: flex-end;
+  }
+
+  .pagination {
+    justify-content: space-between;
+    gap: 7px;
+  }
+
+  .pagination > button {
+    padding-inline: 10px;
+    font-size: 0.7rem;
+  }
+
+  .pagination__numbers {
+    gap: 4px;
+  }
+
+  .pagination__numbers button {
+    min-width: 36px;
+    min-height: 38px;
+    padding-inline: 7px;
   }
 }

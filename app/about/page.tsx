@@ -115,7 +115,7 @@ export default function AboutPage() {
             />
             <div className="customization-options">
               <span><Icon name="check" size={17} />Catalog product sourcing</span>
-              <span><Icon name="check" size={17} />Mixed category assortments</span>
+              <span><Icon name="check" size={17} />Mixed-material assortments</span>
               <span><Icon name="check" size={17} />Custom shape & character</span>
               <span><Icon name="check" size={17} />Logo & packaging options</span>
               <span><Icon name="check" size={17} />Sample coordination</span>

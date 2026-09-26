@@ -1,17 +1,10 @@
-export type ProductCategory =
-  | "animal-squishy"
-  | "food-dessert"
-  | "cute-characters"
-  | "stress-relief"
-  | "custom-oem";
-
 export interface Product {
   id: string;
   slug: string;
   name: string;
   shortDescription: string;
   description: string;
-  category: ProductCategory;
+  materialId: string;
   tags: string[];
   material: string;
   size: string;
@@ -27,6 +20,6 @@ export interface Product {
     title: string;
     description: string;
   };
-  artType: string;
-  palette: [string, string, string];
+  artType?: string;
+  palette?: [string, string, string];
 }

@@ -2,29 +2,36 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { getAllMaterials } from "@/lib/materials";
 import { site } from "@/lib/site";
 
-const footerLinks = {
-  Products: [
-    { label: "All Products", href: "/products/" },
-    { label: "Animal Squishy", href: "/products/?filter=animal-squishy" },
-    { label: "Food & Dessert", href: "/products/?filter=food-dessert" },
-    { label: "Custom / OEM", href: "/products/?filter=custom-oem" },
-  ],
-  Company: [
-    { label: "About Us", href: "/about/" },
-    { label: "FAQ", href: "/faq/" },
-    { label: "Contact", href: "/contact/" },
-  ],
-  Business: [
-    { label: "Wholesale", href: "/wholesale/" },
-    { label: "OEM / ODM", href: "/oem/" },
-    { label: "Privacy Policy", href: "/privacy/" },
-    { label: "Terms", href: "/terms/" },
-  ],
-};
+const companyLinks = [
+  { label: "About Us", href: "/about/" },
+  { label: "FAQ", href: "/faq/" },
+  { label: "Contact", href: "/contact/" },
+];
+
+const businessLinks = [
+  { label: "Wholesale", href: "/wholesale/" },
+  { label: "OEM / ODM", href: "/oem/" },
+  { label: "Privacy Policy", href: "/privacy/" },
+  { label: "Terms", href: "/terms/" },
+];
 
 export function Footer() {
+  const productLinks = [
+    { label: "All Materials", href: "/products/" },
+    ...getAllMaterials().slice(0, 5).map((material) => ({
+      label: material.name,
+      href: `/products/material/${material.id}/`,
+    })),
+  ];
+  const footerLinks = {
+    Products: productLinks,
+    Company: companyLinks,
+    Business: businessLinks,
+  };
+
   return (
     <footer className="site-footer">
       <div className="container site-footer__top">

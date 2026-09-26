@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pu-foam",
+    "name": "PU Foam",
+    "enabled": true,
+    "sort": 10
+  },
+  {
+    "id": "tpr",
+    "name": "TPR",
+    "enabled": true,
+    "sort": 20
+  },
+  {
+    "id": "mixed",
+    "name": "Mixed Materials",
+    "enabled": true,
+    "sort": 30
+  },
+  {
+    "id": "gel",
+    "name": "Gel",
+    "enabled": true,
+    "sort": 40
+  },
+  {
+    "id": "flour",
+    "name": "Flour",
+    "enabled": false,
+    "sort": 50
+  },
+  {
+    "id": "maltose",
+    "name": "Maltose",
+    "enabled": false,
+    "sort": 60
+  },
+  {
+    "id": "petroleum-jelly",
+    "name": "Petroleum Jelly",
+    "enabled": false,
+    "sort": 70
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "enabled": false,
+    "sort": 80
+  }
+]
