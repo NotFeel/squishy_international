@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gel",
+    "name": "Gel",
+    "enabled": true,
+    "sort": 10
+  },
+  {
+    "id": "flour",
+    "name": "Flour",
+    "enabled": true,
+    "sort": 20
+  },
+  {
+    "id": "maltose",
+    "name": "Maltose",
+    "enabled": true,
+    "sort": 30
+  },
+  {
+    "id": "vaseline",
+    "name": "Vaseline",
+    "enabled": true,
+    "sort": 40
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "enabled": true,
+    "sort": 50
+  },
+  {
+    "id": "soil-clay",
+    "name": "Soil Clay",
+    "enabled": true,
+    "sort": 60
+  }
+]
