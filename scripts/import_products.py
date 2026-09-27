@@ -932,7 +932,7 @@ def main() -> int:
     parser.add_argument(
         "--clean-products",
         action="store_true",
-        help="Reserved safety flag; currently rejects destructive clean mode after validation",
+        help="Remove existing product image directories after validation (full-catalog imports only)",
     )
     args = parser.parse_args()
 
