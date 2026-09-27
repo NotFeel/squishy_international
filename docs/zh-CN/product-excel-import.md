@@ -61,11 +61,9 @@ Products
 | `featured` | 布尔值 | 是否首页精选 |
 | `new_arrival` | 布尔值 | 是否新品 |
 | `enabled` | 布尔值 | 是否启用；当前导入会保留该值 |
-| `carton_length_cm` | 数字 | 外箱长度 |
-| `carton_width_cm` | 数字 | 外箱宽度 |
-| `carton_height_cm` | 数字 | 外箱高度 |
-| `carton_qty_pcs` | 整数 | 每箱 PCS |
-| `carton_weight_kg` | 数字 | 每箱毛重 kg |
+| `carton_dimensions` | 文本 | 外箱长宽高，推荐格式 `55.5 × 40.5 × 38 cm` |
+| `carton_qty_pcs` | 整数 | 每箱 PCS，可选 |
+| `carton_weight_kg` | 数字 | 每箱毛重 kg，可选 |
 | `seo_title` | 文本 | 留空时默认为商品名 |
 | `seo_description` | 文本 | 留空时默认为短描述 |
 
@@ -80,7 +78,7 @@ Y / N
 有 / 无
 ```
 
-箱规五列必须同时填写，或者全部留空。
+箱规字段均为可选。`carton_dimensions` 支持 `55.5 × 40.5 × 38 cm`、`55.5 x 40.5 x 38`、`55.5*40.5*38cm`，导入时会统一规范为 `55.5 × 40.5 × 38 cm`。商品详情页会分别展示 Carton Dimensions、Carton Quantity 和 Carton Gross Weight；没有维护的字段不会显示。
 
 ## 4. 图片维护
 
@@ -410,7 +408,7 @@ config/materials.json
 
 ### 箱规校验失败
 
-箱规五列必须同时有值或同时为空。
+`carton_dimensions` 必须包含三个大于 0 的尺寸值，例如 `55.5 × 40.5 × 38 cm`。只维护箱重或只维护外箱数量也是允许的。
 
 ## 13. 上线前检查清单
 
@@ -418,7 +416,7 @@ config/materials.json
 - [ ] `slug` 唯一
 - [ ] `material_id` 已启用
 - [ ] 每行至少包含封面图片
-- [ ] 箱规五列完整或全部为空
+- [ ] 箱规字段格式正确，未维护的字段保持为空
 - [ ] `--check` 通过
 - [ ] 正式导入完成
 - [ ] `npm run validate` 通过

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllMaterials } from "@/lib/materials";
+import { getMaterialsWithProducts } from "@/lib/materials";
 import { getAllProducts } from "@/lib/products";
 import { absoluteUrl } from "@/lib/site";
 
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : route === "products/" ? 0.9 : 0.7,
   }));
 
-  const materialRoutes = getAllMaterials().map((material) => ({
+  const materialRoutes = getMaterialsWithProducts().map((material) => ({
     url: absoluteUrl(`/products/material/${material.id}/`),
     lastModified,
     changeFrequency: "weekly" as const,

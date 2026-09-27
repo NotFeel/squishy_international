@@ -4,24 +4,27 @@ import type { Product } from "@/types/product";
 const productList = productData as Product[];
 
 export function getAllProducts(): Product[] {
-  return productList;
+  return productList.filter((product) => product.enabled !== false);
 }
 
 export function getProductBySlug(slug: string): Product | undefined {
-  return productList.find((product) => product.slug === slug);
+  return getAllProducts().find((product) => product.slug === slug);
 }
 
 export function getProductsByMaterial(materialId: string): Product[] {
-  return productList.filter((product) => product.materialId === materialId);
+  return getAllProducts().filter(
+    (product) => product.materialId === materialId,
+  );
 }
 
 export function getRelatedProducts(product: Product, limit = 4) {
-  const sameMaterial = productList.filter(
+  const visibleProducts = getAllProducts();
+  const sameMaterial = visibleProducts.filter(
     (candidate) =>
       candidate.slug !== product.slug &&
       candidate.materialId === product.materialId,
   );
-  const sharedTags = productList.filter(
+  const sharedTags = visibleProducts.filter(
     (candidate) =>
       candidate.slug !== product.slug &&
       candidate.materialId !== product.materialId &&
@@ -31,5 +34,5 @@ export function getRelatedProducts(product: Product, limit = 4) {
   return [...sameMaterial, ...sharedTags].slice(0, limit);
 }
 
-// Compatibility export for code that only needs to read the catalog.
-export const products = productList;
+// Compatibility export. Prefer getAllProducts() so disabled items stay hidden.
+export const products = getAllProducts();

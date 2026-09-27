@@ -6,7 +6,7 @@ import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { getAllMaterials } from "@/lib/materials";
+import { getMaterialsWithProducts } from "@/lib/materials";
 import { getAllProducts } from "@/lib/products";
 import { withBasePath } from "@/lib/site";
 
@@ -60,15 +60,25 @@ export default function HomePage() {
   const products = getAllProducts();
   const featuredProducts = products.filter((product) => product.featured);
   const materialColors = ["blush", "butter", "sky", "sage", "peach"];
-  const materialCards = getAllMaterials().map((material, index) => ({
-    ...material,
-    description: `Browse ${material.name} products for retail, gifting and custom projects.`,
-    href: `/products/material/${material.id}/`,
-    image:
-      products.find((product) => product.materialId === material.id)?.images[0] ||
-      products[0].images[0],
-    color: materialColors[index % materialColors.length],
-  }));
+  const materialCards = getMaterialsWithProducts().flatMap(
+    (material, index) => {
+      const product = products.find(
+        (item) => item.materialId === material.id,
+      );
+
+      if (!product) return [];
+
+      return [
+        {
+          ...material,
+          description: `Browse ${material.name} products for retail, gifting and custom projects.`,
+          href: `/products/material/${material.id}/`,
+          image: product.images[0],
+          color: materialColors[index % materialColors.length],
+        },
+      ];
+    },
+  );
 
   return (
     <>

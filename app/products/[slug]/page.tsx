@@ -214,6 +214,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <span>Packaging</span>
               <strong>{product.packaging}</strong>
             </div>
+            {product.cartonDimensions && (
+              <div className="spec-item">
+                <span>Carton Dimensions</span>
+                <strong>{product.cartonDimensions}</strong>
+              </div>
+            )}
+            {typeof product.cartonQtyPcs === "number" && (
+              <div className="spec-item">
+                <span>Carton Quantity</span>
+                <strong>{product.cartonQtyPcs} pcs / carton</strong>
+              </div>
+            )}
+            {typeof product.cartonWeightKg === "number" && (
+              <div className="spec-item">
+                <span>Carton Gross Weight</span>
+                <strong>{product.cartonWeightKg} kg</strong>
+              </div>
+            )}
             <div className="spec-item">
               <span>OEM / ODM</span>
               <strong>{product.oem ? "Available" : "Ask our team"}</strong>

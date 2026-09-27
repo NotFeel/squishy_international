@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { getAllMaterials } from "@/lib/materials";
+import { getMaterialsWithProducts } from "@/lib/materials";
 import { site } from "@/lib/site";
 
 const companyLinks = [
@@ -21,7 +21,7 @@ const businessLinks = [
 export function Footer() {
   const productLinks = [
     { label: "All Materials", href: "/products/" },
-    ...getAllMaterials().slice(0, 5).map((material) => ({
+    ...getMaterialsWithProducts().slice(0, 5).map((material) => ({
       label: material.name,
       href: `/products/material/${material.id}/`,
     })),

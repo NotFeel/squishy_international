@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { getAllMaterials } from "@/lib/materials";
+import { getMaterialsWithProducts } from "@/lib/materials";
 
 export function MaterialNav({ activeId }: { activeId?: string }) {
-  const materials = getAllMaterials();
+  const materials = getMaterialsWithProducts();
 
   return (
     <nav className="material-nav" aria-label="Filter products by material">

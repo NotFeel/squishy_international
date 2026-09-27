@@ -6,7 +6,7 @@ import { MaterialNav } from "@/components/MaterialNav";
 import { ProductCatalog } from "@/components/ProductCatalog";
 import { ProductCatalogFallback } from "@/components/ProductCatalogFallback";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { getAllMaterials, getMaterialById } from "@/lib/materials";
+import { getMaterialsWithProducts, getMaterialById } from "@/lib/materials";
 import { getProductsByMaterial } from "@/lib/products";
 import { absoluteUrl, site } from "@/lib/site";
 
@@ -15,7 +15,7 @@ interface MaterialPageProps {
 }
 
 export function generateStaticParams() {
-  return getAllMaterials().map((material) => ({ slug: material.id }));
+  return getMaterialsWithProducts().map((material) => ({ slug: material.id }));
 }
 
 export async function generateMetadata({

@@ -55,11 +55,9 @@ The importer reads `Products` by default. The `Example` worksheet is not importe
 | `featured` | Boolean | Show as featured |
 | `new_arrival` | Boolean | New arrival flag |
 | `enabled` | Boolean | Enabled flag preserved in generated JSON |
-| `carton_length_cm` | Number | Carton length |
-| `carton_width_cm` | Number | Carton width |
-| `carton_height_cm` | Number | Carton height |
-| `carton_qty_pcs` | Integer | PCS per carton |
-| `carton_weight_kg` | Number | Gross carton weight |
+| `carton_dimensions` | Text | Combined dimensions, preferably `55.5 × 40.5 × 38 cm` |
+| `carton_qty_pcs` | Integer | PCS per carton; optional |
+| `carton_weight_kg` | Number | Gross carton weight; optional |
 | `seo_title` | Text | Defaults to product name |
 | `seo_description` | Text | Defaults to short description |
 
@@ -74,7 +72,7 @@ Y / N
 有 / 无
 ```
 
-All five carton fields must be filled together or left blank together.
+Carton fields are optional. `carton_dimensions` accepts formats such as `55.5 × 40.5 × 38 cm`, `55.5 x 40.5 x 38`, or `55.5*40.5*38cm`; the importer normalizes the result to `55.5 × 40.5 × 38 cm`. The product detail page shows Carton Dimensions, Carton Quantity, and Carton Gross Weight independently. Any unmaintained value is omitted.
 
 ## 4. Product Images
 
@@ -351,7 +349,7 @@ Confirm `image_1_cover` contains an actual embedded image, not a text path.
 
 ### Carton validation fails
 
-Fill all five carton fields or leave all five blank.
+`carton_dimensions` must contain three values greater than zero, such as `55.5 × 40.5 × 38 cm`. Carton quantity and carton weight may be maintained independently.
 
 ## 13. Release Checklist
 
@@ -359,7 +357,7 @@ Fill all five carton fields or leave all five blank.
 - [ ] `slug` is unique
 - [ ] `material_id` is enabled
 - [ ] Every row has a cover image
-- [ ] Carton fields are complete or entirely blank
+- [ ] Carton dimensions are valid and unmaintained carton fields are blank
 - [ ] `--check` passes
 - [ ] Formal import completes
 - [ ] `npm run validate` passes

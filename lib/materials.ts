@@ -1,4 +1,5 @@
 import materialsConfig from "@/config/materials.json";
+import { getAllProducts } from "@/lib/products";
 
 export interface Material {
   id: string;
@@ -17,4 +18,14 @@ export function getAllMaterials(): Material[] {
 
 export function getMaterialById(id: string): Material | undefined {
   return allMaterials.find((material) => material.id === id);
+}
+
+export function getMaterialsWithProducts(): Material[] {
+  const usedMaterialIds = new Set(
+    getAllProducts().map((product) => product.materialId),
+  );
+
+  return getAllMaterials().filter((material) =>
+    usedMaterialIds.has(material.id),
+  );
 }

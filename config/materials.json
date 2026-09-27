@@ -2,13 +2,13 @@
   {
     "id": "gel",
     "name": "Gel",
-    "enabled": true,
+    "enabled": false,
     "sort": 10
   },
   {
     "id": "flour",
     "name": "Flour",
-    "enabled": true,
+    "enabled": false,
     "sort": 20
   },
   {
@@ -20,13 +20,13 @@
   {
     "id": "vaseline",
     "name": "Vaseline",
-    "enabled": true,
+    "enabled": false,
     "sort": 40
   },
   {
     "id": "clay",
     "name": "Clay",
-    "enabled": true,
+    "enabled": false,
     "sort": 50
   },
   {
@@ -44,19 +44,19 @@
   {
     "id": "pu-foam",
     "name": "PU Foam",
-    "enabled": true,
+    "enabled": false,
     "sort": 80
   },
   {
     "id": "tpr",
     "name": "TPR",
-    "enabled": true,
+    "enabled": false,
     "sort": 90
   },
   {
     "id": "mixed",
     "name": "Mixed Materials",
-    "enabled": true,
+    "enabled": false,
     "sort": 100
   },
   {

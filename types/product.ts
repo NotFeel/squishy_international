@@ -11,9 +11,13 @@ export interface Product {
   weight?: string;
   moq: string;
   packaging: string;
+  cartonDimensions?: string;
+  cartonQtyPcs?: number;
+  cartonWeightKg?: number;
   oem: boolean;
   featured: boolean;
   newArrival: boolean;
+  enabled?: boolean;
   images: string[];
   ogImage: string;
   seo: {

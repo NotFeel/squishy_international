@@ -97,9 +97,7 @@ BASE_HEADERS = [
     "featured",
     "new_arrival",
     "enabled",
-    "carton_length_cm",
-    "carton_width_cm",
-    "carton_height_cm",
+    "carton_dimensions",
     "carton_qty_pcs",
     "carton_weight_kg",
     "seo_title",
@@ -181,6 +179,31 @@ def parse_number(
 
 def slug_ok(slug: str) -> bool:
     return bool(re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug))
+
+def normalize_carton_dimensions(value: Any, row_num: int) -> str:
+    text = clean_str(value)
+    if not text:
+        return ""
+
+    normalized = re.sub(r"\s*(?:cm|厘米)\s*$", "", text, flags=re.IGNORECASE)
+    match = re.fullmatch(
+        r"\s*(\d+(?:\.\d+)?)\s*(?:×|x|X|\*|by)\s*"
+        r"(\d+(?:\.\d+)?)\s*(?:×|x|X|\*|by)\s*"
+        r"(\d+(?:\.\d+)?)\s*",
+        normalized,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        fail(
+            f"Row {row_num}: carton_dimensions must look like "
+            f"'55.5 × 40.5 × 38 cm', got {value!r}"
+        )
+
+    values = [float(part) for part in match.groups()]
+    if any(number <= 0 for number in values):
+        fail(f"Row {row_num}: carton dimensions must be greater than zero")
+
+    return " × ".join(f"{number:g}" for number in values) + " cm"
 
 
 def split_tags(value: Any) -> list[str]:
@@ -627,45 +650,60 @@ def validate_row(
             errors.append(str(exc))
             parsed_bools[field] = False
 
-    carton_field_names = [
-        "carton_length_cm",
-        "carton_width_cm",
-        "carton_height_cm",
-        "carton_qty_pcs",
-        "carton_weight_kg",
-    ]
-    carton_text = [clean_str(raw.get(f)) for f in carton_field_names]
-    any_carton = any(carton_text)
-    all_carton = all(carton_text)
-
-    if any_carton and not all_carton:
-        errors.append(
-            "carton_length_cm/carton_width_cm/carton_height_cm/"
-            "carton_qty_pcs/carton_weight_kg must be all filled or all blank"
-        )
-
-    carton: dict[str, int | float] | None = None
-    if all_carton:
-        parsed: dict[str, int | float | None] = {}
-        for field in carton_field_names:
-            try:
-                parsed[field] = parse_number(
-                    raw.get(field),
-                    field,
-                    row_num,
-                    integer=(field == "carton_qty_pcs"),
+    carton_dimensions = clean_str(raw.get("carton_dimensions"))
+    if not carton_dimensions:
+        legacy_dimensions = [
+            clean_str(raw.get("carton_length_cm")),
+            clean_str(raw.get("carton_width_cm")),
+            clean_str(raw.get("carton_height_cm")),
+        ]
+        if any(legacy_dimensions):
+            if not all(legacy_dimensions):
+                errors.append(
+                    "carton_length_cm/carton_width_cm/carton_height_cm "
+                    "must all be filled when using the legacy format"
                 )
-            except ImportErrorEx as exc:
-                errors.append(str(exc))
-                parsed[field] = None
-        if all(value is not None for value in parsed.values()):
-            carton = {
-                "lengthCm": parsed["carton_length_cm"],  # type: ignore[assignment]
-                "widthCm": parsed["carton_width_cm"],    # type: ignore[assignment]
-                "heightCm": parsed["carton_height_cm"],  # type: ignore[assignment]
-                "qtyPcs": parsed["carton_qty_pcs"],       # type: ignore[assignment]
-                "weightKg": parsed["carton_weight_kg"],   # type: ignore[assignment]
-            }
+            else:
+                carton_dimensions = (
+                    f"{legacy_dimensions[0]} × {legacy_dimensions[1]} × "
+                    f"{legacy_dimensions[2]} cm"
+                )
+
+    if carton_dimensions:
+        try:
+            carton_dimensions = normalize_carton_dimensions(
+                carton_dimensions, row_num
+            )
+        except ImportErrorEx as exc:
+            errors.append(str(exc))
+            carton_dimensions = ""
+
+    try:
+        carton_qty_pcs = parse_number(
+            raw.get("carton_qty_pcs"),
+            "carton_qty_pcs",
+            row_num,
+            integer=True,
+        )
+    except ImportErrorEx as exc:
+        errors.append(str(exc))
+        carton_qty_pcs = None
+
+    try:
+        carton_weight_kg = parse_number(
+            raw.get("carton_weight_kg"),
+            "carton_weight_kg",
+            row_num,
+        )
+    except ImportErrorEx as exc:
+        errors.append(str(exc))
+        carton_weight_kg = None
+
+    if carton_qty_pcs is not None and carton_qty_pcs < 1:
+        errors.append("carton_qty_pcs must be >= 1 when provided")
+
+    if carton_weight_kg is not None and carton_weight_kg < 0:
+        errors.append("carton_weight_kg must be >= 0 when provided")
 
     try:
         image_entries = validate_images_for_row(
@@ -694,7 +732,9 @@ def validate_row(
         "featured": parsed_bools["featured"],
         "new_arrival": parsed_bools["new_arrival"],
         "enabled": parsed_bools["enabled"],
-        "carton": carton,
+        "carton_dimensions": carton_dimensions,
+        "carton_qty_pcs": carton_qty_pcs,
+        "carton_weight_kg": carton_weight_kg,
         "seo_title": clean_str(raw.get("seo_title")) or name,
         "seo_description": clean_str(raw.get("seo_description")) or short_description,
     }
@@ -753,8 +793,15 @@ def import_one_product(
             "title": raw_record["seo_title"],
             "description": raw_record["seo_description"],
         },
-        "carton": raw_record["carton"],
     }
+
+    if raw_record["carton_dimensions"]:
+        product["cartonDimensions"] = raw_record["carton_dimensions"]
+    if raw_record["carton_qty_pcs"] is not None:
+        product["cartonQtyPcs"] = raw_record["carton_qty_pcs"]
+    if raw_record["carton_weight_kg"] is not None:
+        product["cartonWeightKg"] = raw_record["carton_weight_kg"]
+
     return product
 
 

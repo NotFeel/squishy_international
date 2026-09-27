@@ -78,6 +78,31 @@ for (const product of products) {
     errors.push(`Product ${label}: OG image not found: ${product.ogImage}`);
   }
 
+  if (
+    product.cartonDimensions &&
+    !/^\d+(?:\.\d+)? × \d+(?:\.\d+)? × \d+(?:\.\d+)? cm$/.test(
+      product.cartonDimensions,
+    )
+  ) {
+    errors.push(
+      `Product ${label}: invalid cartonDimensions "${product.cartonDimensions}"`,
+    );
+  }
+
+  if (
+    product.cartonQtyPcs !== undefined &&
+    (!Number.isInteger(product.cartonQtyPcs) || product.cartonQtyPcs < 1)
+  ) {
+    errors.push(`Product ${label}: cartonQtyPcs must be an integer >= 1`);
+  }
+
+  if (
+    product.cartonWeightKg !== undefined &&
+    (!Number.isFinite(product.cartonWeightKg) || product.cartonWeightKg < 0)
+  ) {
+    errors.push(`Product ${label}: cartonWeightKg must be a number >= 0`);
+  }
+
   if (seoTitles.has(product.seo?.title)) {
     warnings.push(`Duplicate SEO title: ${product.seo?.title}`);
   }
