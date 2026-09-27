@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import { Icon } from "@/components/Icon";
-import { MaterialNav } from "@/components/MaterialNav";
 import { ProductCatalog } from "@/components/ProductCatalog";
-import { ProductCatalogFallback } from "@/components/ProductCatalogFallback";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { getMaterialsWithProducts } from "@/lib/materials";
 import { getAllProducts } from "@/lib/products";
 import { absoluteUrl } from "@/lib/site";
 
@@ -53,10 +51,10 @@ export default function ProductsPage() {
 
       <section className="section catalog-section">
         <div className="container">
-          <MaterialNav />
-          <Suspense fallback={<ProductCatalogFallback products={products} />}>
-            <ProductCatalog products={products} />
-          </Suspense>
+          <ProductCatalog
+            products={products}
+            materials={getMaterialsWithProducts()}
+          />
         </div>
       </section>
 

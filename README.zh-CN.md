@@ -120,6 +120,7 @@ NEXT_PUBLIC_SITE_URL=https://yourname.github.io
 NEXT_PUBLIC_BASE_PATH=/squishy_international
 NEXT_PUBLIC_WHATSAPP_PHONE=8613812345678
 NEXT_PUBLIC_CONTACT_EMAIL=hello@example.com
+NEXT_PUBLIC_LOCATION=Global sourcing, serving worldwide
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
@@ -257,6 +258,7 @@ NEXT_PUBLIC_BASE_PATH=
 | `NEXT_PUBLIC_BRAND_NAME` | 建议 | 网站品牌名 |
 | `NEXT_PUBLIC_WHATSAPP_PHONE` | 是 | 国际格式号码，不含 `+` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | 建议 | 联系邮箱 |
+| `NEXT_PUBLIC_LOCATION` | 建议 | Contact 和 Footer 显示的公司地址或业务地区 |
 | `NEXT_PUBLIC_GA_ID` | 否 | GA4 Measurement ID |
 
 ## 10. 构建与发布

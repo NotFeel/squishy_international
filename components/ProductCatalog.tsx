@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { MaterialNav } from "@/components/MaterialNav";
 import { ProductCard } from "@/components/ProductCard";
+import type { Material } from "@/lib/materials";
+import { withBasePath } from "@/lib/site";
 import type { Product } from "@/types/product";
 
 const PAGE_SIZE_OPTIONS = [10, 20, 50] as const;
@@ -10,6 +12,8 @@ const DEFAULT_PAGE_SIZE = 10;
 
 interface ProductCatalogProps {
   products: Product[];
+  materials: Material[];
+  initialMaterialId?: string;
 }
 
 function parsePositiveInteger(value: string | null, fallback: number) {
@@ -17,70 +21,101 @@ function parsePositiveInteger(value: string | null, fallback: number) {
   return Number.isInteger(parsed) && parsed > 0 ? parsed : fallback;
 }
 
-export function ProductCatalog({ products }: ProductCatalogProps) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
+function materialFromPath(pathname: string, materials: Material[]) {
+  return materials.find((material) =>
+    pathname.endsWith(`/products/material/${material.id}/`),
+  )?.id;
+}
+
+function catalogPath(materialId: string) {
+  return withBasePath(
+    materialId ? `/products/material/${materialId}/` : "/products/",
+  );
+}
+
+function queryPath(
+  materialId: string,
+  keyword: string,
+  page: number,
+  pageSize: number,
+) {
+  const params = new URLSearchParams();
+  const normalizedKeyword = keyword.trim();
+
+  if (normalizedKeyword) params.set("q", normalizedKeyword);
+  if (page > 1) params.set("page", String(page));
+  if (pageSize !== DEFAULT_PAGE_SIZE) {
+    params.set("pageSize", String(pageSize));
+  }
+
+  const query = params.toString();
+  const path = catalogPath(materialId);
+  return query ? `${path}?${query}` : path;
+}
+
+export function ProductCatalog({
+  products,
+  materials,
+  initialMaterialId = "",
+}: ProductCatalogProps) {
+  const [materialId, setMaterialId] = useState(initialMaterialId);
+  const [keyword, setKeyword] = useState("");
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(DEFAULT_PAGE_SIZE);
   const catalogRef = useRef<HTMLElement>(null);
 
-  const urlKeyword = searchParams.get("q") ?? "";
-  const requestedPageSize = parsePositiveInteger(
-    searchParams.get("pageSize"),
-    DEFAULT_PAGE_SIZE,
-  );
-  const urlPageSize = PAGE_SIZE_OPTIONS.includes(
-    requestedPageSize as (typeof PAGE_SIZE_OPTIONS)[number],
-  )
-    ? requestedPageSize
-    : DEFAULT_PAGE_SIZE;
-  const urlPage = parsePositiveInteger(searchParams.get("page"), 1);
-
-  const [keyword, setKeyword] = useState(urlKeyword);
-  const [page, setPage] = useState(urlPage);
-  const [pageSize, setPageSize] = useState(urlPageSize);
-
   useEffect(() => {
-    setKeyword(urlKeyword);
-    setPage(urlPage);
-    setPageSize(urlPageSize);
-  }, [urlKeyword, urlPage, urlPageSize]);
+    const applyLocationState = () => {
+      const params = new URLSearchParams(window.location.search);
+      const nextPageSize = parsePositiveInteger(
+        params.get("pageSize"),
+        DEFAULT_PAGE_SIZE,
+      );
+
+      setMaterialId(
+        materialFromPath(window.location.pathname, materials) || "",
+      );
+      setKeyword(params.get("q") ?? "");
+      setPage(parsePositiveInteger(params.get("page"), 1));
+      setPageSize(
+        PAGE_SIZE_OPTIONS.includes(
+          nextPageSize as (typeof PAGE_SIZE_OPTIONS)[number],
+        )
+          ? nextPageSize
+          : DEFAULT_PAGE_SIZE,
+      );
+    };
+
+    applyLocationState();
+    window.addEventListener("popstate", applyLocationState);
+    return () => window.removeEventListener("popstate", applyLocationState);
+  }, [materials]);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
-      const normalizedKeyword = keyword.trim();
+      const nextPath = queryPath(materialId, keyword, page, pageSize);
+      const currentPath = `${window.location.pathname}${window.location.search}`;
 
-      if (normalizedKeyword) params.set("q", normalizedKeyword);
-      else params.delete("q");
-
-      if (page > 1) params.set("page", String(page));
-      else params.delete("page");
-
-      if (pageSize !== DEFAULT_PAGE_SIZE) {
-        params.set("pageSize", String(pageSize));
-      } else {
-        params.delete("pageSize");
-      }
-
-      const nextQuery = params.toString();
-      if (nextQuery !== searchParams.toString()) {
-        router.replace(nextQuery ? `${pathname}?${nextQuery}` : pathname, {
-          scroll: false,
-        });
+      if (nextPath !== currentPath) {
+        window.history.replaceState(null, "", nextPath);
       }
     }, 180);
 
     return () => window.clearTimeout(timeout);
-  }, [keyword, page, pageSize, pathname, router, searchParams]);
+  }, [keyword, materialId, page, pageSize]);
 
   const filteredProducts = useMemo(() => {
+    const materialProducts = materialId
+      ? products.filter((product) => product.materialId === materialId)
+      : products;
     const normalizedKeyword = keyword.trim().toLowerCase();
-    if (!normalizedKeyword) return products;
 
-    return products.filter((product) =>
+    if (!normalizedKeyword) return materialProducts;
+
+    return materialProducts.filter((product) =>
       product.name.toLowerCase().includes(normalizedKeyword),
     );
-  }, [keyword, products]);
+  }, [keyword, materialId, products]);
 
   const totalPages = Math.max(
     1,
@@ -97,6 +132,22 @@ export function ProductCatalog({ products }: ProductCatalogProps) {
   const endItem = Math.min(safePage * pageSize, filteredProducts.length);
   const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
 
+  const changeMaterial = (nextMaterialId: string) => {
+    if (nextMaterialId === materialId) return;
+
+    const scrollY = window.scrollY;
+    setMaterialId(nextMaterialId);
+    setKeyword("");
+    setPage(1);
+    window.history.pushState(null, "", catalogPath(nextMaterialId));
+
+    const restoreScroll = () => window.scrollTo(0, scrollY);
+    window.requestAnimationFrame(restoreScroll);
+    window.setTimeout(restoreScroll, 0);
+    window.setTimeout(restoreScroll, 80);
+    window.setTimeout(restoreScroll, 200);
+  };
+
   const goToPage = (nextPage: number) => {
     setPage(Math.max(1, Math.min(totalPages, nextPage)));
     catalogRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -104,6 +155,12 @@ export function ProductCatalog({ products }: ProductCatalogProps) {
 
   return (
     <section className="catalog" ref={catalogRef}>
+      <MaterialNav
+        materials={materials}
+        activeId={materialId || undefined}
+        onSelect={changeMaterial}
+      />
+
       <div className="catalog-controls">
         <label className="catalog-search" htmlFor="product-search">
           <span>Search by product name</span>
@@ -161,7 +218,13 @@ export function ProductCatalog({ products }: ProductCatalogProps) {
         <div className="empty-state">
           <h3>No matching products found.</h3>
           <p>Try a different product name or clear the search field.</p>
-          <button type="button" onClick={() => setKeyword("")}>
+          <button
+            type="button"
+            onClick={() => {
+              setKeyword("");
+              setPage(1);
+            }}
+          >
             Clear search
           </button>
         </div>

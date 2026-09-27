@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-import { MaterialNav } from "@/components/MaterialNav";
 import { ProductCatalog } from "@/components/ProductCatalog";
-import { ProductCatalogFallback } from "@/components/ProductCatalogFallback";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { getMaterialsWithProducts, getMaterialById } from "@/lib/materials";
-import { getProductsByMaterial } from "@/lib/products";
+import { getAllProducts } from "@/lib/products";
 import { absoluteUrl, site } from "@/lib/site";
 
 interface MaterialPageProps {
@@ -64,7 +61,7 @@ export default async function MaterialProductsPage({
     notFound();
   }
 
-  const products = getProductsByMaterial(material.id);
+  const products = getAllProducts();
 
   return (
     <>
@@ -100,10 +97,11 @@ export default async function MaterialProductsPage({
 
       <section className="section catalog-section">
         <div className="container">
-          <MaterialNav activeId={material.id} />
-          <Suspense fallback={<ProductCatalogFallback products={products} />}>
-            <ProductCatalog products={products} />
-          </Suspense>
+          <ProductCatalog
+            products={products}
+            materials={getMaterialsWithProducts()}
+            initialMaterialId={material.id}
+          />
         </div>
       </section>
     </>

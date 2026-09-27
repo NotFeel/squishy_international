@@ -115,6 +115,7 @@ NEXT_PUBLIC_SITE_URL=https://yourname.github.io
 NEXT_PUBLIC_BASE_PATH=/squishy_international
 NEXT_PUBLIC_WHATSAPP_PHONE=8613812345678
 NEXT_PUBLIC_CONTACT_EMAIL=hello@example.com
+NEXT_PUBLIC_LOCATION=Global sourcing, serving worldwide
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
 
@@ -252,6 +253,7 @@ Configure DNS and HTTPS in GitHub Pages.
 | `NEXT_PUBLIC_BRAND_NAME` | Recommended | Site brand name |
 | `NEXT_PUBLIC_WHATSAPP_PHONE` | Yes | International number without `+` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | Recommended | Contact email |
+| `NEXT_PUBLIC_LOCATION` | Recommended | Company address or service location shown on Contact and Footer |
 | `NEXT_PUBLIC_GA_ID` | No | GA4 Measurement ID |
 
 ## 10. Build and Release

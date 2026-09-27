@@ -27,7 +27,9 @@ export const site = {
   ).replace(/\D/g, ""),
   email:
     process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@squishyloom.com",
-  location: "Global sourcing, serving worldwide",
+  location:
+    process.env.NEXT_PUBLIC_LOCATION ||
+    "Global sourcing, serving worldwide",
 } as const;
 
 export function withBasePath(path: string) {

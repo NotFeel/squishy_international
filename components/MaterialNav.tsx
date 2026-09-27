@@ -1,27 +1,73 @@
-import Link from "next/link";
-import { getMaterialsWithProducts } from "@/lib/materials";
+"use client";
 
-export function MaterialNav({ activeId }: { activeId?: string }) {
-  const materials = getMaterialsWithProducts();
+import type { MouseEvent } from "react";
+import type { Material } from "@/lib/materials";
+import { withBasePath } from "@/lib/site";
+
+interface MaterialNavProps {
+  materials: Material[];
+  activeId?: string;
+  onSelect?: (materialId: string) => void;
+}
+
+export function MaterialNav({
+  materials,
+  activeId,
+  onSelect,
+}: MaterialNavProps) {
+  const handleClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    materialId: string,
+  ) => {
+    if (
+      !onSelect ||
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    onSelect(materialId);
+  };
+
+  const preserveScrollBeforeFocus = (
+    event: MouseEvent<HTMLAnchorElement>,
+  ) => {
+    if (onSelect && event.button === 0) event.preventDefault();
+  };
+
+  const materialHref = (materialId: string) =>
+    withBasePath(
+      materialId ? `/products/material/${materialId}/` : "/products/",
+    );
 
   return (
     <nav className="material-nav" aria-label="Filter products by material">
-      <Link
+      <a
         className={!activeId ? "is-active" : ""}
-        href="/products/"
+        href={materialHref("")}
         aria-current={!activeId ? "page" : undefined}
+        onMouseDown={preserveScrollBeforeFocus}
+        onClick={(event) => handleClick(event, "")}
       >
         All Materials
-      </Link>
+      </a>
       {materials.map((material) => (
-        <Link
+        <a
           className={activeId === material.id ? "is-active" : ""}
-          href={`/products/material/${material.id}/`}
+          href={materialHref(material.id)}
           aria-current={activeId === material.id ? "page" : undefined}
           key={material.id}
+          onMouseDown={preserveScrollBeforeFocus}
+          onClick={(event) => handleClick(event, material.id)}
         >
           {material.name}
-        </Link>
+        </a>
       ))}
     </nav>
   );
