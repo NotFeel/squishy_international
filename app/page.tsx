@@ -2,12 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { MaterialCard } from "@/components/MaterialCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { HomeProductSection } from "@/components/HomeProductSection";
 import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { getMaterialsWithProducts } from "@/lib/materials";
-import { getAllProducts } from "@/lib/products";
+import {
+  getAllProducts,
+  getFeaturedProducts,
+  getNewArrivals,
+  getPreOrderProducts,
+} from "@/lib/products";
 import { withBasePath } from "@/lib/site";
 
 const homeFaqs = [
@@ -58,7 +64,9 @@ const trustCards = [
 
 export default function HomePage() {
   const products = getAllProducts();
-  const featuredProducts = products.filter((product) => product.featured);
+  const newArrivals = getNewArrivals(products);
+  const preOrderProducts = getPreOrderProducts(products);
+  const featuredProducts = getFeaturedProducts(products);
   const materialColors = ["blush", "butter", "sky", "sage", "peach"];
   const materialCards = getMaterialsWithProducts().flatMap(
     (material, index) => {
@@ -147,7 +155,36 @@ export default function HomePage() {
         </div>
       </div>
 
-      <section className="section">
+      <HomeProductSection
+        eyebrow="Just arrived"
+        title="New Arrivals"
+        description="Meet the newest squishy designs added to the catalog."
+        href="/products/new-arrivals/"
+        linkLabel="View all new arrivals"
+        products={newArrivals}
+        className="section--white"
+      />
+
+      <HomeProductSection
+        eyebrow="Reserve your favorites"
+        title="Pre-Order"
+        description="Explore upcoming products currently available for pre-order."
+        href="/products/pre-order/"
+        linkLabel="View pre-order products"
+        products={preOrderProducts}
+      />
+
+      <HomeProductSection
+        eyebrow="Customer favorites"
+        title="Featured Products"
+        description="Standout squishy picks for gifting, retail and wholesale collections."
+        href="/products/"
+        linkLabel="View all products"
+        products={featuredProducts}
+        className="section--white"
+      />
+
+      <section className="section home-material-section">
         <div className="container">
           <div className="section-heading-row">
             <SectionHeading
@@ -179,16 +216,16 @@ export default function HomePage() {
         <div className="container">
           <div className="section-heading-row">
             <SectionHeading
-              eyebrow="Fresh from the studio"
-              title="Best & new squishy picks"
-              description="Small joys, satisfying textures and characters designed to stand out in a crowd."
+              eyebrow="Full catalog"
+              title="All Products"
+              description="Browse the complete squishy collection and filter by material or availability status."
             />
-            <Link className="text-link" href="/products/?filter=new-arrivals">
-              Shop new arrivals <Icon name="arrow" size={18} />
+            <Link className="text-link" href="/products/">
+              View full catalog <Icon name="arrow" size={18} />
             </Link>
           </div>
           <div className="product-grid product-grid--home">
-            {featuredProducts.map((product, index) => (
+            {products.slice(0, 8).map((product, index) => (
               <ProductCard
                 product={product}
                 priority={index < 2}

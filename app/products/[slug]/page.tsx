@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductBadge } from "@/components/ProductBadge";
 import { ProductGallery } from "@/components/ProductGallery";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -111,7 +112,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       "@type": "Offer",
       url: productUrl,
       priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
+      availability:
+        product.status === "available"
+          ? "https://schema.org/InStock"
+          : "https://schema.org/PreOrder",
       priceSpecification: {
         "@type": "PriceSpecification",
         description: "Wholesale quotation available on request",
@@ -142,10 +146,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="product-detail">
             <ProductGallery images={product.images} productName={product.name} />
             <div className="product-summary">
+              <ProductBadge product={product} />
               <div className="product-summary__meta">
                 <span>{material?.name || product.material}</span>
                 <span>SKU {product.id}</span>
-                {product.newArrival && <span>New arrival</span>}
               </div>
               <h1>{product.name}</h1>
               <p className="product-summary__description">

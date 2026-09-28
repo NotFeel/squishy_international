@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
+import { ProductBadge } from "@/components/ProductBadge";
 import { withBasePath } from "@/lib/site";
 import type { Product } from "@/types/product";
 
@@ -26,7 +27,7 @@ export function ProductCard({
           priority={priority}
           sizes="(max-width: 767px) 50vw, (max-width: 1100px) 33vw, 25vw"
         />
-        {product.newArrival && <span className="product-card__badge">New</span>}
+        <ProductBadge product={product} />
       </Link>
       <div className="product-card__body">
         <div>

@@ -54,6 +54,7 @@ export default function ProductsPage() {
           <ProductCatalog
             products={products}
             materials={getMaterialsWithProducts()}
+            basePath="/products/"
           />
         </div>
       </section>

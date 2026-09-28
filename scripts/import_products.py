@@ -74,6 +74,7 @@ REQUIRED_HEADERS = {
     "slug",
     "name",
     "short_description",
+    "status",
     "material_id",
     "size",
     "weight_g",
@@ -87,6 +88,7 @@ BASE_HEADERS = [
     "name",
     "short_description",
     "description",
+    "status",
     "material_id",
     "tags",
     "size",
@@ -116,6 +118,7 @@ IMAGE_OUTPUT_NAMES = {
 
 IMAGE_HEADERS = list(IMAGE_OUTPUT_NAMES.keys())
 
+VALID_STATUS = {"available", "preorder", "coming_soon"}
 TRUE_VALUES = {"true", "1", "yes", "y", "是", "有"}
 FALSE_VALUES = {"false", "0", "no", "n", "否", "无"}
 
@@ -587,6 +590,7 @@ def validate_row(
     slug = clean_str(raw.get("slug"))
     name = clean_str(raw.get("name"))
     short_description = clean_str(raw.get("short_description"))
+    status = clean_str(raw.get("status"))
     material_id = clean_str(raw.get("material_id"))
     size = clean_str(raw.get("size"))
 
@@ -595,6 +599,7 @@ def validate_row(
         ("slug", slug),
         ("name", name),
         ("short_description", short_description),
+        ("status", status),
         ("material_id", material_id),
         ("size", size),
     ]:
@@ -604,6 +609,11 @@ def validate_row(
     if slug and not slug_ok(slug):
         errors.append(
             "slug must use lowercase letters/numbers and hyphens only"
+        )
+
+    if status and status not in VALID_STATUS:
+        errors.append(
+            "status must be one of: available, preorder, coming_soon"
         )
 
     if material_id:
@@ -722,6 +732,7 @@ def validate_row(
         "name": name,
         "short_description": short_description,
         "description": clean_str(raw.get("description")),
+        "status": status,
         "material_id": material_id,
         "tags": split_tags(raw.get("tags")),
         "size": size,
@@ -776,6 +787,7 @@ def import_one_product(
         "name": raw_record["name"],
         "shortDescription": raw_record["short_description"],
         "description": raw_record["description"],
+        "status": raw_record["status"],
         "materialId": raw_record["material_id"],
         "material": raw_record["material_id"],
         "size": raw_record["size"],
@@ -953,8 +965,16 @@ def run(
         encoding="utf-8",
     )
 
+    status_counts = {
+        status: sum(1 for product in products if product["status"] == status)
+        for status in sorted(VALID_STATUS)
+    }
     print()
     print(f"[DONE] Imported {len(products)} products")
+    print(
+        "[DONE] Status  : "
+        + ", ".join(f"{status}={count}" for status, count in status_counts.items())
+    )
     print(f"[DONE] JSON    : {output_json}")
     print(f"[DONE] Images  : {products_output}")
     print("[NEXT] npm run build")

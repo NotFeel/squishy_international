@@ -38,6 +38,7 @@ The importer reads `Products` by default. The `Example` worksheet is not importe
 | `slug` | Text | Lowercase letters, numbers, and hyphens only |
 | `name` | Text | English product name |
 | `short_description` | Text | Short English catalog description |
+| `status` | Dropdown | `available`, `preorder`, or `coming_soon` |
 | `material_id` | Text | Must exist and be enabled in `config/materials.json` |
 | `size` | Text | Product size, such as `5.5 × 4.5 × 5.5 cm` |
 | `weight_g` | Number | Product weight in grams |
@@ -60,6 +61,16 @@ The importer reads `Products` by default. The `Example` worksheet is not importe
 | `carton_weight_kg` | Number | Gross carton weight; optional |
 | `seo_title` | Text | Defaults to product name |
 | `seo_description` | Text | Defaults to short description |
+
+Status values:
+
+```text
+available   Standard available product
+preorder    Pre-order product
+coming_soon Coming soon
+```
+
+Values such as `pre-order` or `PreOrder` are rejected.
 
 Accepted Boolean values:
 

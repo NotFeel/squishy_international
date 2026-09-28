@@ -9,7 +9,10 @@
 - 响应式首页、Wholesale、OEM / ODM、About、FAQ、Contact、Privacy、Terms
 - 按材质维护和生成产品分类
 - 材质静态页面：`/products/material/<material-id>/`
+- New Arrivals、Pre-Order、Featured Products 三个独立首页区块
 - 商品名称搜索，只在当前材质内搜索
+- Available / Pre-Order / Coming Soon 状态筛选
+- New Arrivals 与 Pre-Order 独立静态页面
 - 每页 10 / 20 / 50 条分页
 - 搜索、分页和每页数量同步到 URL
 - 商品详情、SEO Metadata、Product JSON-LD

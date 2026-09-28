@@ -22,6 +22,7 @@ const requiredStringFields = [
   "name",
   "shortDescription",
   "description",
+  "status",
   "materialId",
   "material",
   "size",
@@ -59,6 +60,12 @@ for (const product of products) {
   } else if (!material.enabled) {
     warnings.push(
       `Product ${label} references disabled materialId: ${product.materialId}`,
+    );
+  }
+
+  if (!["available", "preorder", "coming_soon"].includes(product.status)) {
+    errors.push(
+      `Product ${label}: invalid status "${product.status}"`,
     );
   }
 

@@ -16,6 +16,7 @@ docs/
 └── plans/                            # Plans and design references / 方案与设计文档
     ├── catalog_optimization_plan_v2.md
     ├── product_import_optimization_v2.md
+    ├── squishy_preorder_feature_implementation_plan.md
     ├── require_1.md
     ├── squishy_international_site_design.md
     └── squishy_product_catalog_optimization_plan.md
@@ -40,6 +41,7 @@ README.en.md       # Full English project guide / 英文项目文档
 
 - [Catalog Optimization Plan V2](./plans/catalog_optimization_plan_v2.md)
 - [Product Import Optimization V2](./plans/product_import_optimization_v2.md)
+- [Pre-Order Feature Implementation Plan](./plans/squishy_preorder_feature_implementation_plan.md)
 - [Product Data and Metadata Requirements](./plans/require_1.md)
 - [International Site Design](./plans/squishy_international_site_design.md)
 - [Catalog Optimization Plan](./plans/squishy_product_catalog_optimization_plan.md)

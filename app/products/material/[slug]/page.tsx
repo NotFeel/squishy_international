@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ProductCatalog } from "@/components/ProductCatalog";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { getMaterialsWithProducts, getMaterialById } from "@/lib/materials";
-import { getAllProducts } from "@/lib/products";
+import { getAllProducts, getProductsByMaterial } from "@/lib/products";
 import { absoluteUrl, site } from "@/lib/site";
 
 interface MaterialPageProps {
@@ -62,6 +62,7 @@ export default async function MaterialProductsPage({
   }
 
   const products = getAllProducts();
+  const materialProducts = getProductsByMaterial(material.id);
 
   return (
     <>
@@ -78,7 +79,7 @@ export default async function MaterialProductsPage({
             <p className="eyebrow">Shop by material</p>
             <h1>{material.name} Squishy Toys</h1>
             <p className="page-hero__description">
-              Browse {products.length} {material.name} products for wholesale,
+              Browse {materialProducts.length} {material.name} products for wholesale,
               gifting and custom projects.
             </p>
           </div>
@@ -100,6 +101,7 @@ export default async function MaterialProductsPage({
           <ProductCatalog
             products={products}
             materials={getMaterialsWithProducts()}
+            basePath={`/products/material/${material.id}/`}
             initialMaterialId={material.id}
           />
         </div>

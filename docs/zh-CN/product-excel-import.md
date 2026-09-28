@@ -44,6 +44,7 @@ Products
 | `slug` | 文本 | 只能使用小写字母、数字和连字符 |
 | `name` | 文本 | 英文商品名 |
 | `short_description` | 文本 | 卡片和摘要使用的英文短描述 |
+| `status` | 下拉选择 | 只能填写 `available`、`preorder`、`coming_soon` |
 | `material_id` | 文本 | 必须存在于 `config/materials.json`，且必须为启用状态 |
 | `size` | 文本 | 产品尺寸，例如 `5.5 × 4.5 × 5.5 cm` |
 | `weight_g` | 数字 | 产品重量，单位克 |
@@ -66,6 +67,16 @@ Products
 | `carton_weight_kg` | 数字 | 每箱毛重 kg，可选 |
 | `seo_title` | 文本 | 留空时默认为商品名 |
 | `seo_description` | 文本 | 留空时默认为短描述 |
+
+状态值：
+
+```text
+available   正常可询价
+preorder    预售
+coming_soon 即将推出
+```
+
+非法值（例如 `pre-order`、`PreOrder`）会直接阻止导入。
 
 布尔值支持：
 

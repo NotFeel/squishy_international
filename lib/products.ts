@@ -1,10 +1,29 @@
 import productData from "@/data/products.json";
-import type { Product } from "@/types/product";
+import type { Product, ProductStatus } from "@/types/product";
 
 const productList = productData as Product[];
 
 export function getAllProducts(): Product[] {
   return productList.filter((product) => product.enabled !== false);
+}
+
+export function getNewArrivals(products: Product[] = getAllProducts()) {
+  return products.filter((product) => product.newArrival);
+}
+
+export function getPreOrderProducts(products: Product[] = getAllProducts()) {
+  return products.filter((product) => product.status === "preorder");
+}
+
+export function getFeaturedProducts(products: Product[] = getAllProducts()) {
+  return products.filter((product) => product.featured);
+}
+
+export function getProductsByStatus(
+  status: ProductStatus,
+  products: Product[] = getAllProducts(),
+) {
+  return products.filter((product) => product.status === status);
 }
 
 export function getProductBySlug(slug: string): Product | undefined {

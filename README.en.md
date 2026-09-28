@@ -9,7 +9,10 @@ An English product showcase and WhatsApp inquiry website for squishy toys. It us
 - Responsive Home, Wholesale, OEM / ODM, About, FAQ, Contact, Privacy, and Terms pages
 - Material-based catalog configuration
 - Static material routes: `/products/material/<material-id>/`
+- Dedicated New Arrivals, Pre-Order, and Featured Products homepage sections
 - Product-name search scoped to the current material
+- Available / Pre-Order / Coming Soon status filtering
+- Dedicated New Arrivals and Pre-Order static pages
 - `10 / 20 / 50` products per page
 - URL synchronization for search and pagination
 - Product detail pages, metadata, and Product JSON-LD

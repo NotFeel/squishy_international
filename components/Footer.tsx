@@ -20,7 +20,9 @@ const businessLinks = [
 
 export function Footer() {
   const productLinks = [
-    { label: "All Materials", href: "/products/" },
+    { label: "All Products", href: "/products/" },
+    { label: "New Arrivals", href: "/products/new-arrivals/" },
+    { label: "Pre-Order", href: "/products/pre-order/" },
     ...getMaterialsWithProducts().slice(0, 5).map((material) => ({
       label: material.name,
       href: `/products/material/${material.id}/`,

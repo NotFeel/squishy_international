@@ -1,8 +1,14 @@
+export type ProductStatus =
+  | "available"
+  | "preorder"
+  | "coming_soon";
+
 export interface Product {
   id: string;
   slug: string;
   name: string;
   shortDescription: string;
+  status: ProductStatus;
   description: string;
   materialId: string;
   tags: string[];

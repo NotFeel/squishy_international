@@ -3101,3 +3101,149 @@ h3 {
     padding-inline: 7px;
   }
 }
+
+.product-badges {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  max-width: calc(100% - 24px);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.product-badge {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: white;
+  box-shadow: 0 6px 18px rgba(31, 35, 40, 0.11);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.product-badge--new {
+  color: #68461f;
+  background: var(--butter);
+}
+
+.product-badge--preorder {
+  color: #6f2f29;
+  background: var(--blush);
+}
+
+.product-badge--coming-soon {
+  color: #315e48;
+  background: var(--sage);
+}
+
+.product-badge--featured {
+  color: white;
+  background: var(--ink);
+}
+
+.product-summary > .product-badges {
+  position: static;
+  margin-bottom: 16px;
+}
+
+.catalog-filters {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.status-filter > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-filter__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.status-filter button {
+  min-height: 38px;
+  padding: 7px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.status-filter button:hover {
+  border-color: #c9c8c3;
+  color: var(--ink);
+}
+
+.status-filter button.is-active {
+  border-color: var(--ink);
+  color: white;
+  background: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .product-badges {
+    top: 9px;
+    left: 9px;
+    gap: 4px;
+  }
+
+  .product-badge {
+    min-height: 22px;
+    padding: 4px 7px;
+    font-size: 0.52rem;
+  }
+
+  .catalog-filters {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .status-filter {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .status-filter__options {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .status-filter__options::-webkit-scrollbar {
+    display: none;
+  }
+
+  .status-filter button {
+    flex: 0 0 auto;
+  }
+}

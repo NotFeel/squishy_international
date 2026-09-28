@@ -17,7 +17,7 @@ export function buildWhatsAppMessage(
     const productUrl = absoluteUrl(`/products/${product.slug}/`);
 
     return [
-      `Hi ${site.name}, I'm interested in this product.`,
+      `Hi ${site.name}, I'm interested in this ${product.status === "preorder" ? "pre-order " : ""}product.`,
       "",
       `Product: ${product.name}`,
       `Product ID: ${product.id}`,
