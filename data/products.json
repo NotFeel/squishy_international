@@ -1,112 +1,245 @@
 [
   {
-    "id": "SP-001",
-    "slug": "needoh-icecubes",
-    "name": "NeeDoh Nice Berg – Giant Squishy Cube",
-    "shortDescription": "Ice cube squeeze toy—ideal for stress relief, gifting, or wholesale.",
-    "description": "A super-size version of the best-selling Nice Cube!\nSensory satisfaction with the super solid squish\nSqueeze. stretch. squish this mega size iceberg style sensory cube!",
-    "status": "available",
-    "materialId": "maltose",
-    "material": "maltose",
-    "size": "5.5 × 5.5 × 5.5 cm",
-    "weight": "210 g",
-    "moq": "100 pcs",
+    "id": "SQ-2609-001",
+    "slug": "angel-honey-pot-squishy",
+    "name": "Angel Honey Pot Squishy",
+    "shortDescription": "Cute honey-jar style squishy with honey dipper.",
+    "description": "Cute honey-jar style squishy with honey dipper. Soft, stretchy, and highly satisfying to play with. Perfect for\nsensory play and gift ranges.",
+    "status": "preorder",
+    "materialId": "crystal-mud",
+    "material": "crystal-mud",
+    "size": "7.5 × 7.5 × 8.5 cm",
+    "weight": "240 g",
+    "moq": "1 pcs",
     "packaging": "OPP Bag / Custom Packaging",
-    "oem": true,
-    "featured": true,
-    "newArrival": true,
+    "oem": false,
+    "featured": false,
+    "newArrival": false,
     "enabled": true,
     "tags": [
-      "slow-rising",
-      "stress-relief"
+      "Soft",
+      "stretchy",
+      "and highly satisfying to play with."
     ],
     "images": [
-      "/products/needoh-icecubes/01-cover.webp",
-      "/products/needoh-icecubes/02-front.webp",
-      "/products/needoh-icecubes/03-side.webp",
-      "/products/needoh-icecubes/04-back.webp",
-      "/products/needoh-icecubes/05-squeeze.webp"
+      "/products/angel-honey-pot-squishy/01-cover.webp",
+      "/products/angel-honey-pot-squishy/02-front.webp",
+      "/products/angel-honey-pot-squishy/03-side.webp",
+      "/products/angel-honey-pot-squishy/04-back.webp"
     ],
-    "ogImage": "/products/needoh-icecubes/og-image.webp",
+    "ogImage": "/products/angel-honey-pot-squishy/og-image.webp",
     "seo": {
-      "title": "Giant Squishy Cube | Slow Rising Squishy",
-      "description": "Ice cube squeeze toy—ideal for stress relief, gifting, or wholesale."
+      "title": "Angel Honey Pot Squishy",
+      "description": "Cute honey-jar style squishy with honey dipper."
     },
-    "cartonDimensions": "55.5 × 40.5 × 38 cm",
-    "cartonQtyPcs": 144,
-    "cartonWeightKg": 27.0
+    "cartonDimensions": "80.5 × 80.5 × 90.8 cm",
+    "cartonQtyPcs": 128,
+    "cartonWeightKg": 31.0
   },
   {
-    "id": "SP-002",
-    "slug": "pectin-filled-bun",
-    "name": "Rainbow Stress-Relief Squeeze Toy",
-    "shortDescription": "rainbow bun squishy, A bouncy, tactile feel that soothes the soul.",
-    "description": "Rainbow Stress-Relief Squeeze Toy – Squishy, ​​tactile, and mood-soothing. Features a 6-color collection, shimmering pearlescent finish, and slow-rebound material.",
+    "id": "SQ-2609-002",
+    "slug": "halloween-butter-quishy",
+    "name": "Halloween Butter Squishy",
+    "shortDescription": "Super soft, slow-rising butter-style squishies with fun Halloween designs (ghosts, pumpkins, Trick or Treat).",
+    "description": "Super soft, slow-rising butter-style squishies with fun Halloween designs (ghosts, pumpkins, Trick or Treat).\nLooks like butter, feels like squishy! Ideal for seasonal ranges and party favour packs.",
     "status": "preorder",
-    "materialId": "pectin",
-    "material": "pectin",
-    "size": "5.5 × 4.5 × 5.5 cm",
-    "weight": "63 g",
-    "moq": "200 pcs",
+    "materialId": "clay",
+    "material": "clay",
+    "size": "14 × 4.5 × 4.5 cm",
+    "weight": "160 g",
+    "moq": "1 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": false,
+    "featured": false,
+    "newArrival": false,
+    "enabled": true,
+    "tags": [
+      "Slow rising • Super soft • Halloween designs • Individually wrapped"
+    ],
+    "images": [
+      "/products/halloween-butter-quishy/01-cover.webp",
+      "/products/halloween-butter-quishy/02-front.webp",
+      "/products/halloween-butter-quishy/03-side.webp",
+      "/products/halloween-butter-quishy/04-back.webp"
+    ],
+    "ogImage": "/products/halloween-butter-quishy/og-image.webp",
+    "seo": {
+      "title": "Halloween Butter Squishy",
+      "description": "Super soft, slow-rising butter-style squishies with fun Halloween designs (ghosts, pumpkins, Trick or Treat)."
+    },
+    "cartonDimensions": "70 × 45 × 45 cm",
+    "cartonQtyPcs": 144,
+    "cartonWeightKg": 25.0
+  },
+  {
+    "id": "SQ-2609-003",
+    "slug": "cheese-potato-squishy",
+    "name": "Cheese Potato Squishy",
+    "shortDescription": "Adorable potato-shaped squishies with big eyes and colourful lips.",
+    "description": "Adorable potato-shaped squishies with big eyes and colourful lips. Soft, pinchable, and full of character. Great\neveryday impulse item and stress-relief toy",
+    "status": "preorder",
+    "materialId": "clay",
+    "material": "clay",
+    "size": "6.3 × 6.5 × 8 cm",
+    "weight": "105 g",
+    "moq": "1 pcs",
     "packaging": "OPP Bag / Custom Packaging",
     "oem": true,
     "featured": false,
     "newArrival": false,
     "enabled": true,
     "tags": [
-      "Bouncy",
-      "tactile feel—a mood-soothing collection of six colors",
-      "made from slow-rebound material."
+      "Soft & pinchable • Multiple face colours • Keychain style"
     ],
     "images": [
-      "/products/pectin-filled-bun/01-cover.webp",
-      "/products/pectin-filled-bun/02-front.webp",
-      "/products/pectin-filled-bun/03-side.webp",
-      "/products/pectin-filled-bun/04-back.webp",
-      "/products/pectin-filled-bun/05-squeeze.webp"
+      "/products/cheese-potato-squishy/01-cover.webp",
+      "/products/cheese-potato-squishy/02-front.webp",
+      "/products/cheese-potato-squishy/03-side.webp",
+      "/products/cheese-potato-squishy/04-back.webp"
     ],
-    "ogImage": "/products/pectin-filled-bun/og-image.webp",
+    "ogImage": "/products/cheese-potato-squishy/og-image.webp",
     "seo": {
-      "title": "Rainbow Stress-Relief Squeeze Toy",
-      "description": "rainbow bun squishy, A bouncy, tactile feel that soothes the soul."
+      "title": "Cheese Potato Squishy",
+      "description": "Adorable potato-shaped squishies with big eyes and colourful lips."
     },
-    "cartonDimensions": "56.5 × 41.5 × 29 cm",
+    "cartonDimensions": "58 × 53 × 59 cm",
     "cartonQtyPcs": 288,
-    "cartonWeightKg": 21.0
+    "cartonWeightKg": 31.0
   },
   {
-    "id": "SP-003",
-    "slug": "strawberry-squeeze",
-    "name": "Crisp Strawberry",
-    "shortDescription": "Crisp, snap-when-pressed strawberries",
-    "description": "Large Strawberry-Shaped Squishy Stress-Relief Toy with Crunchy Internal Blocks – A Fun Fidget Toy for Work Breaks",
-    "status": "coming_soon",
-    "materialId": "clay-blocks",
-    "material": "clay-blocks",
-    "size": "12.5 × 14.5 × 12.5 cm",
-    "weight": "466.5 g",
-    "moq": "40 pcs",
+    "id": "SQ-2609-004",
+    "slug": "bread-squishy-toy",
+    "name": "Bread Squishy Toy",
+    "shortDescription": "Soft, slow-rising Bakina Bread Squishy Toys with a fun and realistic bread design.",
+    "description": "Soft, slow-rising Bakina Bread Squishy Toys with a fun and realistic bread design. Perfect for squeezing, fidgeting, stress relief, collecting, or gifting!",
+    "status": "preorder",
+    "materialId": "silicone",
+    "material": "silicone",
+    "size": "7 × 6 × 8 cm",
+    "weight": "25 g",
+    "moq": "1 pcs",
     "packaging": "OPP Bag / Custom Packaging",
     "oem": false,
-    "featured": true,
-    "newArrival": true,
+    "featured": false,
+    "newArrival": false,
     "enabled": true,
     "tags": [
-      "Crisp",
-      "crackling texture"
+      "Real bread feel • Includes white wrapping • Super Soft"
     ],
     "images": [
-      "/products/strawberry-squeeze/01-cover.webp",
-      "/products/strawberry-squeeze/02-front.webp",
-      "/products/strawberry-squeeze/03-side.webp"
+      "/products/bread-squishy-toy/01-cover.webp",
+      "/products/bread-squishy-toy/02-front.webp",
+      "/products/bread-squishy-toy/03-side.webp",
+      "/products/bread-squishy-toy/04-back.webp"
     ],
-    "ogImage": "/products/strawberry-squeeze/og-image.webp",
+    "ogImage": "/products/bread-squishy-toy/og-image.webp",
     "seo": {
-      "title": "Crisp Strawberry",
-      "description": "Crisp, snap-when-pressed strawberries"
+      "title": "Bread Squishy Toy",
+      "description": "Soft, slow-rising Bakina Bread Squishy Toys with a fun and realistic bread design."
+    }
+  },
+  {
+    "id": "SQ-2609-005",
+    "slug": "christmas-grinch-mystrey-squishy",
+    "name": "Christmas Grinch Mystrey Squishy",
+    "shortDescription": "Christmas Dumpling, The Green Grinch Squishy Toy, Slow Rising, Sensory Fidget Stress Relief.",
+    "description": "Christmas Dumpling, The Green Grinch Squishy Toy, Slow Rising, Sensory Fidget Stress Relief.",
+    "status": "preorder",
+    "materialId": "pectin",
+    "material": "pectin",
+    "size": "8.5 × 8.5 × 5 cm",
+    "weight": "245 g",
+    "moq": "1 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": false,
+    "featured": false,
+    "newArrival": false,
+    "enabled": true,
+    "tags": [
+      "Real soft feel • Mystery Grinch • Super Soft"
+    ],
+    "images": [
+      "/products/christmas-grinch-mystrey-squishy/01-cover.webp",
+      "/products/christmas-grinch-mystrey-squishy/02-front.webp",
+      "/products/christmas-grinch-mystrey-squishy/03-side.webp",
+      "/products/christmas-grinch-mystrey-squishy/04-back.webp"
+    ],
+    "ogImage": "/products/christmas-grinch-mystrey-squishy/og-image.webp",
+    "seo": {
+      "title": "Christmas Grinch Mystrey Squishy",
+      "description": "Christmas Dumpling, The Green Grinch Squishy Toy, Slow Rising, Sensory Fidget Stress Relief."
     },
-    "cartonDimensions": "55 × 50 × 35 cm",
-    "cartonQtyPcs": 48,
-    "cartonWeightKg": 20.0
+    "cartonDimensions": "65 × 33 × 51 cm",
+    "cartonQtyPcs": 144,
+    "cartonWeightKg": 36.0
+  },
+  {
+    "id": "SQ-2609-006",
+    "slug": "squishy-christmas-santatoy",
+    "name": "Squishy Christmas SantaToy",
+    "shortDescription": "Christmas Dumpling, The Reindeer & Santa Squishy Toy Slow Rising Sensory Fidget Stress Relief.",
+    "description": "Christmas Dumpling, The Reindeer & Santa Squishy Toy Slow Rising Sensory Fidget Stress Relief.",
+    "status": "preorder",
+    "materialId": "maltose",
+    "material": "maltose",
+    "size": "8.5 × 8.5 × 5 cm",
+    "weight": "245 g",
+    "moq": "1 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": false,
+    "featured": false,
+    "newArrival": false,
+    "enabled": true,
+    "tags": [
+      "Real Soft feel • Mystery colours • Super Soft"
+    ],
+    "images": [
+      "/products/squishy-christmas-santatoy/01-cover.webp",
+      "/products/squishy-christmas-santatoy/02-front.webp",
+      "/products/squishy-christmas-santatoy/03-side.webp",
+      "/products/squishy-christmas-santatoy/04-back.webp"
+    ],
+    "ogImage": "/products/squishy-christmas-santatoy/og-image.webp",
+    "seo": {
+      "title": "Squishy Christmas SantaToy",
+      "description": "Christmas Dumpling, The Reindeer & Santa Squishy Toy Slow Rising Sensory Fidget Stress Relief."
+    },
+    "cartonDimensions": "65 × 33 × 51 cm",
+    "cartonQtyPcs": 144,
+    "cartonWeightKg": 36.0
+  },
+  {
+    "id": "SQ-2609-007",
+    "slug": "christmas-butter-squishy",
+    "name": "Christmas Butter Squishy",
+    "shortDescription": "Christmas Butter, The Christmas Butter Squishy Toy, Slow Rising Sensory Fidget Stress Relief.",
+    "description": "Christmas Butter, The Christmas Butter Squishy Toy, Slow Rising Sensory Fidget Stress Relief.",
+    "status": "preorder",
+    "materialId": "clay",
+    "material": "clay",
+    "size": "14 × 4.5 × 4.5 cm",
+    "weight": "160 g",
+    "moq": "1 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": false,
+    "featured": false,
+    "newArrival": false,
+    "enabled": true,
+    "tags": [
+      "Real soft feel • Mystery Grinch • Super Soft"
+    ],
+    "images": [
+      "/products/christmas-butter-squishy/01-cover.webp",
+      "/products/christmas-butter-squishy/02-front.webp",
+      "/products/christmas-butter-squishy/03-side.webp"
+    ],
+    "ogImage": "/products/christmas-butter-squishy/og-image.webp",
+    "seo": {
+      "title": "Christmas Butter Squishy",
+      "description": "Christmas Butter, The Christmas Butter Squishy Toy, Slow Rising Sensory Fidget Stress Relief."
+    },
+    "cartonDimensions": "70 × 45 × 45 cm",
+    "cartonQtyPcs": 144,
+    "cartonWeightKg": 25.0
   }
 ]

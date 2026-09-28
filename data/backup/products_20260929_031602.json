@@ -1,0 +1,112 @@
+[
+  {
+    "id": "SP-001",
+    "slug": "needoh-icecubes",
+    "name": "NeeDoh Nice Berg – Giant Squishy Cube",
+    "shortDescription": "Ice cube squeeze toy—ideal for stress relief, gifting, or wholesale.",
+    "description": "A super-size version of the best-selling Nice Cube!\nSensory satisfaction with the super solid squish\nSqueeze. stretch. squish this mega size iceberg style sensory cube!",
+    "status": "available",
+    "materialId": "maltose",
+    "material": "maltose",
+    "size": "5.5 × 5.5 × 5.5 cm",
+    "weight": "210 g",
+    "moq": "100 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": true,
+    "newArrival": true,
+    "enabled": true,
+    "tags": [
+      "slow-rising",
+      "stress-relief"
+    ],
+    "images": [
+      "/products/needoh-icecubes/01-cover.webp",
+      "/products/needoh-icecubes/02-front.webp",
+      "/products/needoh-icecubes/03-side.webp",
+      "/products/needoh-icecubes/04-back.webp",
+      "/products/needoh-icecubes/05-squeeze.webp"
+    ],
+    "ogImage": "/products/needoh-icecubes/og-image.webp",
+    "seo": {
+      "title": "Giant Squishy Cube | Slow Rising Squishy",
+      "description": "Ice cube squeeze toy—ideal for stress relief, gifting, or wholesale."
+    },
+    "cartonDimensions": "55.5 × 40.5 × 38 cm",
+    "cartonQtyPcs": 144,
+    "cartonWeightKg": 27.0
+  },
+  {
+    "id": "SP-002",
+    "slug": "pectin-filled-bun",
+    "name": "Rainbow Stress-Relief Squeeze Toy",
+    "shortDescription": "rainbow bun squishy, A bouncy, tactile feel that soothes the soul.",
+    "description": "Rainbow Stress-Relief Squeeze Toy – Squishy, ​​tactile, and mood-soothing. Features a 6-color collection, shimmering pearlescent finish, and slow-rebound material.",
+    "status": "preorder",
+    "materialId": "pectin",
+    "material": "pectin",
+    "size": "5.5 × 4.5 × 5.5 cm",
+    "weight": "63 g",
+    "moq": "200 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": true,
+    "featured": false,
+    "newArrival": false,
+    "enabled": true,
+    "tags": [
+      "Bouncy",
+      "tactile feel—a mood-soothing collection of six colors",
+      "made from slow-rebound material."
+    ],
+    "images": [
+      "/products/pectin-filled-bun/01-cover.webp",
+      "/products/pectin-filled-bun/02-front.webp",
+      "/products/pectin-filled-bun/03-side.webp",
+      "/products/pectin-filled-bun/04-back.webp",
+      "/products/pectin-filled-bun/05-squeeze.webp"
+    ],
+    "ogImage": "/products/pectin-filled-bun/og-image.webp",
+    "seo": {
+      "title": "Rainbow Stress-Relief Squeeze Toy",
+      "description": "rainbow bun squishy, A bouncy, tactile feel that soothes the soul."
+    },
+    "cartonDimensions": "56.5 × 41.5 × 29 cm",
+    "cartonQtyPcs": 288,
+    "cartonWeightKg": 21.0
+  },
+  {
+    "id": "SP-003",
+    "slug": "strawberry-squeeze",
+    "name": "Crisp Strawberry",
+    "shortDescription": "Crisp, snap-when-pressed strawberries",
+    "description": "Large Strawberry-Shaped Squishy Stress-Relief Toy with Crunchy Internal Blocks – A Fun Fidget Toy for Work Breaks",
+    "status": "coming_soon",
+    "materialId": "clay-blocks",
+    "material": "clay-blocks",
+    "size": "12.5 × 14.5 × 12.5 cm",
+    "weight": "466.5 g",
+    "moq": "40 pcs",
+    "packaging": "OPP Bag / Custom Packaging",
+    "oem": false,
+    "featured": true,
+    "newArrival": true,
+    "enabled": true,
+    "tags": [
+      "Crisp",
+      "crackling texture"
+    ],
+    "images": [
+      "/products/strawberry-squeeze/01-cover.webp",
+      "/products/strawberry-squeeze/02-front.webp",
+      "/products/strawberry-squeeze/03-side.webp"
+    ],
+    "ogImage": "/products/strawberry-squeeze/og-image.webp",
+    "seo": {
+      "title": "Crisp Strawberry",
+      "description": "Crisp, snap-when-pressed strawberries"
+    },
+    "cartonDimensions": "55 × 50 × 35 cm",
+    "cartonQtyPcs": 48,
+    "cartonWeightKg": 20.0
+  }
+]
